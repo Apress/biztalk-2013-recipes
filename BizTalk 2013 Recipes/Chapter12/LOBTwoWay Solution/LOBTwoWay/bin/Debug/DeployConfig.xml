@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DeployConfiguration xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Microsoft.ApplicationServer.Integration.MessageFlow">
+  <DeploymentEndpoint>https://apressbtsvcs.biztalk.windows.net/default</DeploymentEndpoint>
+  <DeploymentItems>
+    <DeploymentItem>
+      <DeploymentInfo>
+        <DeploymentAddress>LOBTwoWayBridge</DeploymentAddress>
+        <IsOverridable>true</IsOverridable>
+        <ResourceAbsolutePath>C:\Projects\Apress\Chapters\Chapter12\LOBTwoWay Solution\LOBTwoWay\bin\Debug\LOBTwoWayBridge.Pipeline.atom</ResourceAbsolutePath>
+      </DeploymentInfo>
+      <DeploymentType>ServiceBusEntity</DeploymentType>
+      <ItemType>XmlBridge</ItemType>
+      <Name>LOBTwoWayBridge</Name>
+      <ParentName i:nil="true" />
+      <VerificationInfo>
+        <VerificationAddress>LOBTwoWayBridge</VerificationAddress>
+      </VerificationInfo>
+    </DeploymentItem>
+    <DeploymentItem>
+      <DeploymentInfo>
+        <DeploymentAddress>$Artifacts/XmlSchemaDefinition/GetOrdersRequest.xsd</DeploymentAddress>
+        <IsOverridable>true</IsOverridable>
+        <ResourceAbsolutePath>C:\Projects\Apress\Chapters\Chapter12\LOBTwoWay Solution\LOBTwoWay\bin\Debug\GetOrdersRequest.xsd.Artifact.atom</ResourceAbsolutePath>
+      </DeploymentInfo>
+      <DeploymentType>ServiceBusEntity</DeploymentType>
+      <ItemType>Artifact</ItemType>
+      <Name>GetOrdersRequest.xsd</Name>
+      <ParentName i:nil="true" />
+      <VerificationInfo>
+        <VerificationAddress>$Artifacts/XmlSchemaDefinition/GetOrdersRequest.xsd</VerificationAddress>
+      </VerificationInfo>
+    </DeploymentItem>
+    <DeploymentItem>
+      <DeploymentInfo>
+        <DeploymentAddress>$Artifacts/XmlSchemaDefinition/GetOrderResponse.xsd</DeploymentAddress>
+        <IsOverridable>true</IsOverridable>
+        <ResourceAbsolutePath>C:\Projects\Apress\Chapters\Chapter12\LOBTwoWay Solution\LOBTwoWay\bin\Debug\GetOrderResponse.xsd.Artifact.atom</ResourceAbsolutePath>
+      </DeploymentInfo>
+      <DeploymentType>ServiceBusEntity</DeploymentType>
+      <ItemType>Artifact</ItemType>
+      <Name>GetOrderResponse.xsd</Name>
+      <ParentName i:nil="true" />
+      <VerificationInfo>
+        <VerificationAddress>$Artifacts/XmlSchemaDefinition/GetOrderResponse.xsd</VerificationAddress>
+      </VerificationInfo>
+    </DeploymentItem>
+    <DeploymentItem>
+      <DeploymentInfo>
+        <DeploymentAddress>$Artifacts/XmlSchemaDefinition/LOB Schemas/apressrecipens_manageorders_getordersbycompcode_TypedProcedure.dbo.xsd</DeploymentAddress>
+        <IsOverridable>true</IsOverridable>
+        <ResourceAbsolutePath>C:\Projects\Apress\Chapters\Chapter12\LOBTwoWay Solution\LOBTwoWay\bin\Debug\apressrecipens_manageorders_getordersbycompcode_TypedProcedure.dbo.xsd.Artifact.atom</ResourceAbsolutePath>
+      </DeploymentInfo>
+      <DeploymentType>ServiceBusEntity</DeploymentType>
+      <ItemType>Artifact</ItemType>
+      <Name>LOB Schemas\apressrecipens_manageorders_getordersbycompcode_TypedProcedure.dbo.xsd</Name>
+      <ParentName i:nil="true" />
+      <VerificationInfo>
+        <VerificationAddress>$Artifacts/XmlSchemaDefinition/LOB Schemas/apressrecipens_manageorders_getordersbycompcode_TypedProcedure.dbo.xsd</VerificationAddress>
+      </VerificationInfo>
+    </DeploymentItem>
+    <DeploymentItem>
+      <DeploymentInfo>
+        <DeploymentAddress>$Artifacts/XmlSchemaDefinition/LOB Schemas/apressrecipens_manageorders_getordersbycompcode_ProcedureResultSet.dbo.GetSalesOrdersByCompanyCode.xsd</DeploymentAddress>
+        <IsOverridable>true</IsOverridable>
+        <ResourceAbsolutePath>C:\Projects\Apress\Chapters\Chapter12\LOBTwoWay Solution\LOBTwoWay\bin\Debug\apressrecipens_manageorders_getordersbycompcode_ProcedureResultSet.dbo.GetSalesOrdersByCompanyCode.xsd.Artifact.atom</ResourceAbsolutePath>
+      </DeploymentInfo>
+      <DeploymentType>ServiceBusEntity</DeploymentType>
+      <ItemType>Artifact</ItemType>
+      <Name>LOB Schemas\apressrecipens_manageorders_getordersbycompcode_ProcedureResultSet.dbo.GetSalesOrdersByCompanyCode.xsd</Name>
+      <ParentName i:nil="true" />
+      <VerificationInfo>
+        <VerificationAddress>$Artifacts/XmlSchemaDefinition/LOB Schemas/apressrecipens_manageorders_getordersbycompcode_ProcedureResultSet.dbo.GetSalesOrdersByCompanyCode.xsd</VerificationAddress>
+      </VerificationInfo>
+    </DeploymentItem>
+    <DeploymentItem>
+      <DeploymentInfo>
+        <DeploymentAddress>$Artifacts/TransformDefinition/LOBRes_To_GetOrdersRes.trfm</DeploymentAddress>
+        <IsOverridable>true</IsOverridable>
+        <ResourceAbsolutePath>C:\Projects\Apress\Chapters\Chapter12\LOBTwoWay Solution\LOBTwoWay\bin\Debug\LOBRes_To_GetOrdersRes.trfm.Artifact.atom</ResourceAbsolutePath>
+      </DeploymentInfo>
+      <DeploymentType>ServiceBusEntity</DeploymentType>
+      <ItemType>Artifact</ItemType>
+      <Name>LOBRes_To_GetOrdersRes.trfm</Name>
+      <ParentName i:nil="true" />
+      <VerificationInfo>
+        <VerificationAddress>$Artifacts/TransformDefinition/LOBRes_To_GetOrdersRes.trfm</VerificationAddress>
+      </VerificationInfo>
+    </DeploymentItem>
+    <DeploymentItem>
+      <DeploymentInfo>
+        <DeploymentAddress>$Artifacts/TransformDefinition/GetOrdersReq_To_LOBReq.trfm</DeploymentAddress>
+        <IsOverridable>true</IsOverridable>
+        <ResourceAbsolutePath>C:\Projects\Apress\Chapters\Chapter12\LOBTwoWay Solution\LOBTwoWay\bin\Debug\GetOrdersReq_To_LOBReq.trfm.Artifact.atom</ResourceAbsolutePath>
+      </DeploymentInfo>
+      <DeploymentType>ServiceBusEntity</DeploymentType>
+      <ItemType>Artifact</ItemType>
+      <Name>GetOrdersReq_To_LOBReq.trfm</Name>
+      <ParentName i:nil="true" />
+      <VerificationInfo>
+        <VerificationAddress>$Artifacts/TransformDefinition/GetOrdersReq_To_LOBReq.trfm</VerificationAddress>
+      </VerificationInfo>
+    </DeploymentItem>
+  </DeploymentItems>
+</DeployConfiguration>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MapFile xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:a1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns="http://schemas.microsoft.com/2011/07/AppServer/Transforms">
+  <GridHeight>200</GridHeight>
+  <GridWidth>200</GridWidth>
+  <MainMapletName>Page 1</MainMapletName>
+  <MapFileSettings i:nil="true" />
+  <Maplets>
+    <Maplet>
+      <SerializedProperties>
+        <a1:KeyValueOfstringanyType>
+          <a1:Key>Pages</a1:Key>
+          <a1:Value i:type="a1:ArrayOfstring">
+            <a1:string>Page 1</a1:string>
+          </a1:Value>
+        </a1:KeyValueOfstringanyType>
+      </SerializedProperties>
+      <Statements>
+        <MapStatement i:type="Assignment">
+          <SerializedProperties>
+            <a1:KeyValueOfstringanyType>
+              <a1:Key>Page</a1:Key>
+              <a1:Value i:type="xs:string">Page 1</a1:Value>
+            </a1:KeyValueOfstringanyType>
+            <a1:KeyValueOfstringanyType>
+              <a1:Key>Id</a1:Key>
+              <a1:Value i:type="xs:int">1</a1:Value>
+            </a1:KeyValueOfstringanyType>
+          </SerializedProperties>
+          <From i:type="PathExpression">
+            <Path>srcRoot1/CompanyCode</Path>
+          </From>
+          <To>
+            <Path>tgtRoot1/ns1:CompanyCode</Path>
+          </To>
+        </MapStatement>
+      </Statements>
+      <Name>Page 1</Name>
+      <ReferencedAssemblies />
+      <Scripts />
+      <SourceParameters>
+        <ParameterInfo>
+          <Name>srcRoot1</Name>
+          <PropertiesInfo i:nil="true" />
+          <Type i:type="XmlEntityType">
+            <LocalName>GetOrdersRequest</LocalName>
+            <NamespaceName>http://RelayReceipe.GetOrdersRequest</NamespaceName>
+            <SchemaLocation>.\GetOrdersRequest.xsd</SchemaLocation>
+          </Type>
+        </ParameterInfo>
+      </SourceParameters>
+      <TargetParameters>
+        <ParameterInfo>
+          <Name>tgtRoot1</Name>
+          <PropertiesInfo i:nil="true" />
+          <Type i:type="XmlEntityType">
+            <LocalName>GetSalesOrdersByCompanyCode</LocalName>
+            <NamespaceName>http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/dbo</NamespaceName>
+            <SchemaLocation>LOB Schemas\apressrecipens_manageorders_getordersbycompcode_TypedProcedure.dbo.xsd</SchemaLocation>
+          </Type>
+        </ParameterInfo>
+      </TargetParameters>
+      <XmlNamespacePrefixMap />
+    </Maplet>
+  </Maplets>
+  <Version>.82</Version>
+  <XmlNamespacePrefixMap>
+    <a1:KeyValueOfstringstring>
+      <a1:Key>ns0</a1:Key>
+      <a1:Value>http://RelayReceipe.GetOrdersRequest</a1:Value>
+    </a1:KeyValueOfstringstring>
+    <a1:KeyValueOfstringstring>
+      <a1:Key>ns1</a1:Key>
+      <a1:Value>http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/dbo</a1:Value>
+    </a1:KeyValueOfstringstring>
+    <a1:KeyValueOfstringstring>
+      <a1:Key>ns2</a1:Key>
+      <a1:Value>http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/dbo/GetSalesOrdersByCompanyCode</a1:Value>
+    </a1:KeyValueOfstringstring>
+  </XmlNamespacePrefixMap>
+</MapFile>

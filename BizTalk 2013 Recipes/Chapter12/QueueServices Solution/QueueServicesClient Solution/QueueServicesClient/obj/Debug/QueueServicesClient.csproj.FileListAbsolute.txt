@@ -1,0 +1,9 @@
+C:\Projects\Apress\Chapters\Chapter12\QueueServices Solution\QueueServicesClient Solution\QueueServicesClient\bin\Debug\QueueServicesClient.exe.config
+C:\Projects\Apress\Chapters\Chapter12\QueueServices Solution\QueueServicesClient Solution\QueueServicesClient\bin\Debug\QueueServicesClient.exe
+C:\Projects\Apress\Chapters\Chapter12\QueueServices Solution\QueueServicesClient Solution\QueueServicesClient\bin\Debug\QueueServicesClient.pdb
+C:\Projects\Apress\Chapters\Chapter12\QueueServices Solution\QueueServicesClient Solution\QueueServicesClient\bin\Debug\Microsoft.ServiceBus.dll
+C:\Projects\Apress\Chapters\Chapter12\QueueServices Solution\QueueServicesClient Solution\QueueServicesClient\bin\Debug\Microsoft.WindowsAzure.Configuration.dll
+C:\Projects\Apress\Chapters\Chapter12\QueueServices Solution\QueueServicesClient Solution\QueueServicesClient\bin\Debug\Microsoft.ServiceBus.xml
+C:\Projects\Apress\Chapters\Chapter12\QueueServices Solution\QueueServicesClient Solution\QueueServicesClient\obj\Debug\QueueServicesClient.csprojResolveAssemblyReference.cache
+C:\Projects\Apress\Chapters\Chapter12\QueueServices Solution\QueueServicesClient Solution\QueueServicesClient\obj\Debug\QueueServicesClient.exe
+C:\Projects\Apress\Chapters\Chapter12\QueueServices Solution\QueueServicesClient Solution\QueueServicesClient\obj\Debug\QueueServicesClient.pdb

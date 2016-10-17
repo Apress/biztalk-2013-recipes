@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Activity x:Class="{x:Null}" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:maic="clr-namespace:Microsoft.ApplicationServer.Integration.Common;assembly=Microsoft.ApplicationServer.Integration.Common, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:maitc="clr-namespace:Microsoft.ApplicationServer.Integration.Transforms.Common;assembly=Microsoft.ApplicationServer.Integration.Transforms.Common, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:maitct="clr-namespace:Microsoft.ApplicationServer.Integration.Transforms.Common.Types;assembly=Microsoft.ApplicationServer.Integration.Transforms.Common, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:maitmp="clr-namespace:Microsoft.ApplicationServer.Integration.Transforms.MapOM.Parsing;assembly=Microsoft.ApplicationServer.Integration.Transforms.MapOM, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:maitr="clr-namespace:Microsoft.ApplicationServer.Integration.Transforms.Runtime;assembly=Microsoft.ApplicationServer.Integration.Transforms.Runtime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:maitrb="clr-namespace:Microsoft.ApplicationServer.Integration.Transforms.Runtime.BuiltInFunctions;assembly=Microsoft.ApplicationServer.Integration.Transforms.Runtime.BuiltInFunctions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:sl="clr-namespace:System.Linq;assembly=System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:sx="clr-namespace:System.Xml;assembly=System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:sxl="clr-namespace:System.Xml.Linq;assembly=System.Xml.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="srcRoot1" Type="InArgument(maitr:XmlObject)" />
+    <x:Property Name="TransformContext" Type="InArgument(maitr:ITransformContext)" />
+    <x:Property Name="tgtRoot1" Type="OutArgument(maitr:XmlObject)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Sequence>
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:Dictionary(x:String, sxl:XNamespace)" Name="NamespacePrefixMap" />
+      <Variable x:TypeArguments="sxl:XName" Name="wfXName1" />
+      <Variable x:TypeArguments="maic:TimeoutHelper" Name="wfVar1" />
+      <Variable x:TypeArguments="maitmp:PathFragmentCollection" Name="wfPfc1" />
+      <Variable x:TypeArguments="maitmp:PathFragmentCollection" Name="wfPfc2" />
+      <Variable x:TypeArguments="maitmp:PathFragmentCollection" Name="wfPfc3" />
+      <Variable x:TypeArguments="maitmp:PathFragmentCollection" Name="wfPfc4" />
+      <Variable x:TypeArguments="maitmp:PathFragmentCollection" Name="wfPfc5" />
+      <Variable x:TypeArguments="maitmp:PathFragmentCollection" Name="wfPfc6" />
+      <Variable x:TypeArguments="maitmp:PathFragmentCollection" Name="wfPfc7" />
+      <Variable x:TypeArguments="maitmp:PathFragmentCollection" Name="wfPfc8" />
+      <Variable x:TypeArguments="maitmp:PathFragmentCollection" Name="wfPfc9" />
+      <Variable x:TypeArguments="maitmp:PathFragmentCollection" Name="wfPfc10" />
+      <Variable x:TypeArguments="maitmp:PathFragmentCollection" Name="wfPfc11" />
+      <Variable x:TypeArguments="maitmp:PathFragmentCollection" Name="wfPfc12" />
+      <Variable x:TypeArguments="maitmp:PathFragmentCollection" Name="wfPfc13" />
+      <Variable x:TypeArguments="maitmp:PathFragmentCollection" Name="wfPfc14" />
+      <Variable x:TypeArguments="maitmp:PathFragmentCollection" Name="wfPfc15" />
+      <Variable x:TypeArguments="maitmp:PathFragmentCollection" Name="wfPfc16" />
+    </Sequence.Variables>
+    <Assign x:TypeArguments="scg:Dictionary(x:String, sxl:XNamespace)" To="[NamespacePrefixMap]" Value="[New Dictionary(Of String, XNamespace) From { { &quot;ns0&quot;, XNamespace.Get(&quot;http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/dbo&quot;) }, { &quot;ns1&quot;, XNamespace.Get(&quot;http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/dbo/GetSalesOrdersByCompanyCode&quot;) }, { &quot;ns2&quot;, XNamespace.Get(&quot;http://RelayReceipe.GetOrderResponse&quot;) } }]" />
+    <maitr:AssociateNamespacePrefixes NamespacePrefixMap="[NamespacePrefixMap]" Target="[srcRoot1]" />
+    <Assign x:TypeArguments="sxl:XName" To="[wfXName1]" Value="[XName.Get(&quot;{http://RelayReceipe.GetOrderResponse}GetOrdersResponse&quot;)]" />
+    <Assign x:TypeArguments="maitmp:PathFragmentCollection" To="[wfPfc1]" Value="[ParseUtils.ParsePathExpression(&quot;srcRoot1/ns0:StoredProcedureResultSet0/ns1:StoredProcedureResultSet0/ns1:SalesOrderID&quot;, NamespacePrefixMap).Fragments]" />
+    <Assign x:TypeArguments="maitmp:PathFragmentCollection" To="[wfPfc2]" Value="[ParseUtils.ParsePathExpression(&quot;tgtRoot1/Orders/Order/OrderID&quot;, NamespacePrefixMap).Fragments]" />
+    <Assign x:TypeArguments="maitmp:PathFragmentCollection" To="[wfPfc3]" Value="[ParseUtils.ParsePathExpression(&quot;srcRoot1/ns0:StoredProcedureResultSet0/ns1:StoredProcedureResultSet0/ns1:DateRequested&quot;, NamespacePrefixMap).Fragments]" />
+    <Assign x:TypeArguments="maitmp:PathFragmentCollection" To="[wfPfc4]" Value="[ParseUtils.ParsePathExpression(&quot;tgtRoot1/Orders/Order/OrderedDate&quot;, NamespacePrefixMap).Fragments]" />
+    <Assign x:TypeArguments="maitmp:PathFragmentCollection" To="[wfPfc5]" Value="[ParseUtils.ParsePathExpression(&quot;srcRoot1/ns0:StoredProcedureResultSet0/ns1:StoredProcedureResultSet0/ns1:ShipDate&quot;, NamespacePrefixMap).Fragments]" />
+    <Assign x:TypeArguments="maitmp:PathFragmentCollection" To="[wfPfc6]" Value="[ParseUtils.ParsePathExpression(&quot;tgtRoot1/Orders/Order/ShipDate&quot;, NamespacePrefixMap).Fragments]" />
+    <Assign x:TypeArguments="maitmp:PathFragmentCollection" To="[wfPfc7]" Value="[ParseUtils.ParsePathExpression(&quot;srcRoot1/ns0:StoredProcedureResultSet0/ns1:StoredProcedureResultSet0/ns1:Qty&quot;, NamespacePrefixMap).Fragments]" />
+    <Assign x:TypeArguments="maitmp:PathFragmentCollection" To="[wfPfc8]" Value="[ParseUtils.ParsePathExpression(&quot;tgtRoot1/Orders/Order/Quanity&quot;, NamespacePrefixMap).Fragments]" />
+    <Assign x:TypeArguments="maitmp:PathFragmentCollection" To="[wfPfc9]" Value="[ParseUtils.ParsePathExpression(&quot;srcRoot1/ns0:StoredProcedureResultSet0/ns1:StoredProcedureResultSet0/ns1:PartNum&quot;, NamespacePrefixMap).Fragments]" />
+    <Assign x:TypeArguments="maitmp:PathFragmentCollection" To="[wfPfc10]" Value="[ParseUtils.ParsePathExpression(&quot;tgtRoot1/Orders/Order/ProductID&quot;, NamespacePrefixMap).Fragments]" />
+    <Assign x:TypeArguments="maitmp:PathFragmentCollection" To="[wfPfc11]" Value="[ParseUtils.ParsePathExpression(&quot;srcRoot1/ns0:StoredProcedureResultSet0/ns1:StoredProcedureResultSet0/ns1:UnitAskPrice&quot;, NamespacePrefixMap).Fragments]" />
+    <Assign x:TypeArguments="maitmp:PathFragmentCollection" To="[wfPfc12]" Value="[ParseUtils.ParsePathExpression(&quot;tgtRoot1/Orders/Order/UnitPrice&quot;, NamespacePrefixMap).Fragments]" />
+    <Assign x:TypeArguments="maitmp:PathFragmentCollection" To="[wfPfc13]" Value="[ParseUtils.ParsePathExpression(&quot;srcRoot1/ns0:StoredProcedureResultSet0/ns1:StoredProcedureResultSet0/ns1:SellToAddress&quot;, NamespacePrefixMap).Fragments]" />
+    <Assign x:TypeArguments="maitmp:PathFragmentCollection" To="[wfPfc14]" Value="[ParseUtils.ParsePathExpression(&quot;tgtRoot1/Orders/Order/ShipToAddress&quot;, NamespacePrefixMap).Fragments]" />
+    <Assign x:TypeArguments="maitmp:PathFragmentCollection" To="[wfPfc15]" Value="[ParseUtils.ParsePathExpression(&quot;srcRoot1/ns0:StoredProcedureResultSet0/ns1:StoredProcedureResultSet0/ns1:BillToAddress&quot;, NamespacePrefixMap).Fragments]" />
+    <Assign x:TypeArguments="maitmp:PathFragmentCollection" To="[wfPfc16]" Value="[ParseUtils.ParsePathExpression(&quot;tgtRoot1/Orders/Order/BillToAddress&quot;, NamespacePrefixMap).Fragments]" />
+    <Assign x:TypeArguments="maitr:XmlObject" To="[tgtRoot1]" Value="[New XmlObject(wfXName1, NamespacePrefixMap, True)]" />
+    <Assign x:TypeArguments="maic:TimeoutHelper" To="[wfVar1]" Value="[new TimeoutHelper(TransformContext.Timeout)]" />
+    <If Condition="[ObjectHelper.Exists(srcRoot1, wfPfc1)]">
+      <If.Then>
+        <maitr:SetPathValue IgnoreEmptyOrNullValues="True" Path="[wfPfc2]" Target="[tgtRoot1]" Value="[ObjectHelper.GetPathValue(srcRoot1, wfPfc1)]" />
+      </If.Then>
+    </If>
+    <If Condition="[ObjectHelper.Exists(srcRoot1, wfPfc3)]">
+      <If.Then>
+        <maitr:SetPathValue IgnoreEmptyOrNullValues="True" Path="[wfPfc4]" Target="[tgtRoot1]" Value="[ObjectHelper.GetPathValue(srcRoot1, wfPfc3)]" />
+      </If.Then>
+    </If>
+    <If Condition="[ObjectHelper.Exists(srcRoot1, wfPfc5)]">
+      <If.Then>
+        <maitr:SetPathValue IgnoreEmptyOrNullValues="True" Path="[wfPfc6]" Target="[tgtRoot1]" Value="[ObjectHelper.GetPathValue(srcRoot1, wfPfc5)]" />
+      </If.Then>
+    </If>
+    <If Condition="[ObjectHelper.Exists(srcRoot1, wfPfc7)]">
+      <If.Then>
+        <maitr:SetPathValue IgnoreEmptyOrNullValues="True" Path="[wfPfc8]" Target="[tgtRoot1]" Value="[ObjectHelper.GetPathValue(srcRoot1, wfPfc7)]" />
+      </If.Then>
+    </If>
+    <If Condition="[ObjectHelper.Exists(srcRoot1, wfPfc9)]">
+      <If.Then>
+        <maitr:SetPathValue IgnoreEmptyOrNullValues="True" Path="[wfPfc10]" Target="[tgtRoot1]" Value="[ObjectHelper.GetPathValue(srcRoot1, wfPfc9)]" />
+      </If.Then>
+    </If>
+    <If Condition="[ObjectHelper.Exists(srcRoot1, wfPfc11)]">
+      <If.Then>
+        <maitr:SetPathValue IgnoreEmptyOrNullValues="True" Path="[wfPfc12]" Target="[tgtRoot1]" Value="[ObjectHelper.GetPathValue(srcRoot1, wfPfc11)]" />
+      </If.Then>
+    </If>
+    <If Condition="[ObjectHelper.Exists(srcRoot1, wfPfc13)]">
+      <If.Then>
+        <maitr:SetPathValue IgnoreEmptyOrNullValues="True" Path="[wfPfc14]" Target="[tgtRoot1]" Value="[ObjectHelper.GetPathValue(srcRoot1, wfPfc13)]" />
+      </If.Then>
+    </If>
+    <If Condition="[ObjectHelper.Exists(srcRoot1, wfPfc15)]">
+      <If.Then>
+        <maitr:SetPathValue IgnoreEmptyOrNullValues="True" Path="[wfPfc16]" Target="[tgtRoot1]" Value="[ObjectHelper.GetPathValue(srcRoot1, wfPfc15)]" />
+      </If.Then>
+    </If>
+  </Sequence>
+</Activity>

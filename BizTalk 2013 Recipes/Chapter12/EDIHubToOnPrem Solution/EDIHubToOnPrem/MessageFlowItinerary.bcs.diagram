@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bridgeConfigurationDiagram dslVersion="1.0.0.0" Id="457643f1-6266-466e-bcfb-2842c7368d3b" absoluteBounds="0, 0, 11, 8.5" name="MessageFlowItinerary">
+  <bridgeConfigurationMoniker Id="4cccb9d9-d6ea-4558-9ccb-82f973251bd1" />
+  <nestedChildShapes>
+    <oneWayBridgeShape Id="1ace62c2-f897-444b-9546-951de6e106af" absoluteBounds="1.5, 1.75, 1.1, 0.9" fillColor="White">
+      <oneWayBridgeMoniker Id="bfb8587b-869f-4fa1-8997-1870c45a512e" />
+      <relativeChildShapes>
+        <inPortShape Id="e6b5329c-fc17-4a0b-b250-364b70218452" absoluteBounds="1.45, 2.15, 0.1, 0.1" fillColor="Transparent">
+          <oneWayBridgeInPortMoniker Id="1b09ce84-ed57-4c43-978c-9c5d67f0a6da" />
+        </inPortShape>
+        <outPortShape Id="41bd96d2-6dcc-4b06-b698-5e7927b86983" absoluteBounds="2.55, 2.15, 0.1, 0.1" fillColor="Transparent">
+          <oneWayRoutePortMoniker Id="8cedeb60-2fa9-4c69-a16e-bdb0ce0dcd3e" />
+        </outPortShape>
+      </relativeChildShapes>
+    </oneWayBridgeShape>
+    <queueShape Id="564e2096-f3f4-4576-9937-c886acfea5e4" absoluteBounds="4.375, 1.75, 1.1, 0.9" fillColor="White">
+      <queueMoniker Id="7494f3c8-cb0d-41ac-8b76-e5cca2af3df3" />
+      <relativeChildShapes>
+        <inPortShape Id="6eb8ab5f-dafe-43d3-a058-662c6de9bc18" absoluteBounds="4.325, 2.15, 0.1, 0.1" fillColor="Transparent">
+          <queueInPortMoniker Id="49b13041-2e20-40cf-93ba-5a9486b08997" />
+        </inPortShape>
+      </relativeChildShapes>
+    </queueShape>
+    <oneWayRouteConnector Id="c9ee8483-bf51-4f77-b49c-57bf1e7994f5" edgePoints="[(2.65 : 2.2); (4.325 : 2.2)]" fixedFrom="Caller" fixedTo="Caller" color="ControlDarkDark">
+      <oneWayRouteConnectionMoniker Id="2d5c2481-f5aa-4454-9296-093cc3b3170b" />
+      <nodes>
+        <outPortShapeMoniker Id="41bd96d2-6dcc-4b06-b698-5e7927b86983" />
+        <inPortShapeMoniker Id="6eb8ab5f-dafe-43d3-a058-662c6de9bc18" />
+      </nodes>
+    </oneWayRouteConnector>
+  </nestedChildShapes>
+</bridgeConfigurationDiagram>

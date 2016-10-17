@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Activity x:Class="{x:Null}" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:maic="clr-namespace:Microsoft.ApplicationServer.Integration.Common;assembly=Microsoft.ApplicationServer.Integration.Common, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:maitc="clr-namespace:Microsoft.ApplicationServer.Integration.Transforms.Common;assembly=Microsoft.ApplicationServer.Integration.Transforms.Common, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:maitct="clr-namespace:Microsoft.ApplicationServer.Integration.Transforms.Common.Types;assembly=Microsoft.ApplicationServer.Integration.Transforms.Common, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:maitmp="clr-namespace:Microsoft.ApplicationServer.Integration.Transforms.MapOM.Parsing;assembly=Microsoft.ApplicationServer.Integration.Transforms.MapOM, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:maitr="clr-namespace:Microsoft.ApplicationServer.Integration.Transforms.Runtime;assembly=Microsoft.ApplicationServer.Integration.Transforms.Runtime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:maitrb="clr-namespace:Microsoft.ApplicationServer.Integration.Transforms.Runtime.BuiltInFunctions;assembly=Microsoft.ApplicationServer.Integration.Transforms.Runtime.BuiltInFunctions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:sl="clr-namespace:System.Linq;assembly=System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:sx="clr-namespace:System.Xml;assembly=System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:sxl="clr-namespace:System.Xml.Linq;assembly=System.Xml.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="srcRoot1" Type="InArgument(maitr:XmlObject)" />
+    <x:Property Name="TransformContext" Type="InArgument(maitr:ITransformContext)" />
+    <x:Property Name="tgtRoot1" Type="OutArgument(maitr:XmlObject)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces for internal implementation</mva:VisualBasic.Settings>
+  <Sequence>
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:Dictionary(x:String, sxl:XNamespace)" Name="NamespacePrefixMap" />
+      <Variable x:TypeArguments="sxl:XName" Name="wfXName1" />
+      <Variable x:TypeArguments="maic:TimeoutHelper" Name="wfVar1" />
+      <Variable x:TypeArguments="maitmp:PathFragmentCollection" Name="wfPfc1" />
+      <Variable x:TypeArguments="maitmp:PathFragmentCollection" Name="wfPfc2" />
+      <Variable x:TypeArguments="x:String" Name="var1" />
+      <Variable x:TypeArguments="maitmp:PathFragmentCollection" Name="wfPfc3" />
+      <Variable x:TypeArguments="maitmp:PathFragmentCollection" Name="wfPfc4" />
+      <Variable x:TypeArguments="maitmp:PathFragmentCollection" Name="wfPfc5" />
+      <Variable x:TypeArguments="x:String" Name="var2" />
+      <Variable x:TypeArguments="maitmp:PathFragmentCollection" Name="wfPfc6" />
+    </Sequence.Variables>
+    <Assign x:TypeArguments="scg:Dictionary(x:String, sxl:XNamespace)" To="[NamespacePrefixMap]" Value="[New Dictionary(Of String, XNamespace) From { { &quot;ns0&quot;, XNamespace.Get(&quot;http://WeatherBizTalkService.WeatherEvent&quot;) }, { &quot;ns1&quot;, XNamespace.Get(&quot;http://EventConsumerProj.FireEvent&quot;) } }]" />
+    <maitr:AssociateNamespacePrefixes NamespacePrefixMap="[NamespacePrefixMap]" Target="[srcRoot1]" />
+    <Assign x:TypeArguments="sxl:XName" To="[wfXName1]" Value="[XName.Get(&quot;{http://EventConsumerProj.FireEvent}FireEvent&quot;)]" />
+    <Assign x:TypeArguments="maitmp:PathFragmentCollection" To="[wfPfc1]" Value="[ParseUtils.ParsePathExpression(&quot;srcRoot1/EventType&quot;, NamespacePrefixMap).Fragments]" />
+    <Assign x:TypeArguments="maitmp:PathFragmentCollection" To="[wfPfc2]" Value="[ParseUtils.ParsePathExpression(&quot;tgtRoot1/AlertType&quot;, NamespacePrefixMap).Fragments]" />
+    <Assign x:TypeArguments="maitmp:PathFragmentCollection" To="[wfPfc3]" Value="[ParseUtils.ParsePathExpression(&quot;tgtRoot1/AlertColor&quot;, NamespacePrefixMap).Fragments]" />
+    <Assign x:TypeArguments="maitmp:PathFragmentCollection" To="[wfPfc4]" Value="[ParseUtils.ParsePathExpression(&quot;srcRoot1/Temperature&quot;, NamespacePrefixMap).Fragments]" />
+    <Assign x:TypeArguments="maitmp:PathFragmentCollection" To="[wfPfc5]" Value="[ParseUtils.ParsePathExpression(&quot;tgtRoot1/Temperature&quot;, NamespacePrefixMap).Fragments]" />
+    <Assign x:TypeArguments="maitmp:PathFragmentCollection" To="[wfPfc6]" Value="[ParseUtils.ParsePathExpression(&quot;tgtRoot1/AlertMessage&quot;, NamespacePrefixMap).Fragments]" />
+    <Assign x:TypeArguments="maitr:XmlObject" To="[tgtRoot1]" Value="[New XmlObject(wfXName1, NamespacePrefixMap, True)]" />
+    <Assign x:TypeArguments="maic:TimeoutHelper" To="[wfVar1]" Value="[new TimeoutHelper(TransformContext.Timeout)]" />
+    <maitr:SetPathValue IgnoreEmptyOrNullValues="True" Path="[wfPfc2]" Target="[tgtRoot1]" Value="[ObjectHelper.GetPathValue(srcRoot1, wfPfc1)]" />
+    <maitr:EvaluationWrapper x:TypeArguments="x:String" OperationLabel="AlertColor" OperationName="String Concatenate" Result="[var1]" ThrowOnFailure="True" Value="[StringFunctions.StringConcatenate(&quot;RED&quot;)]" ValueOnException="[Nothing]" />
+    <maitr:SetPathValue IgnoreEmptyOrNullValues="True" Path="[wfPfc3]" Target="[tgtRoot1]" Value="[var1]" />
+    <maitr:SetPathValue IgnoreEmptyOrNullValues="True" Path="[wfPfc5]" Target="[tgtRoot1]" Value="[ObjectHelper.GetPathValue(srcRoot1, wfPfc4)]" />
+    <maitr:EvaluationWrapper x:TypeArguments="x:String" OperationLabel="" OperationName="String Concatenate" Result="[var2]" ThrowOnFailure="True" Value="[StringFunctions.StringConcatenate(&quot;Watch for Wild fires in the Valley, prepare for mobilzing crew in case needed.&quot;)]" ValueOnException="[Nothing]" />
+    <maitr:SetPathValue IgnoreEmptyOrNullValues="True" Path="[wfPfc6]" Target="[tgtRoot1]" Value="[var2]" />
+  </Sequence>
+</Activity>

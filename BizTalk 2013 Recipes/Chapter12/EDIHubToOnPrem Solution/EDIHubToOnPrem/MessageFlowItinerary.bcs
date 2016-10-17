@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bridgeConfiguration xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="4cccb9d9-d6ea-4558-9ccb-82f973251bd1" biztalkServiceUrl="https://apressbtsvcs.biztalk.windows.net" xmlns="http://schemas.microsoft.com/dsltools/BridgeConfiguration">
+  <entities>
+    <bridgeConfigurationModelHasEntities Id="68384f88-2d6c-4b59-8870-ec9c2ab3df9d">
+      <oneWayBridge Id="bfb8587b-869f-4fa1-8997-1870c45a512e" entityName="EDIIncomingBridge" address="EDIIncomingBridge" pipelineTemplateName="oneWayXmlPipeline" trackingOptions="AAEAAAD/////AQAAAAAAAAAMAgAAAH1NaWNyb3NvZnQuQXBwbGljYXRpb25TZXJ2ZXIuSW50ZWdyYXRpb24uTWVzc2FnZUZsb3cuQ29tbW9uLCBWZXJzaW9uPTIuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49MzFiZjM4NTZhZDM2NGUzNQUBAAAARE1pY3Jvc29mdC5BcHBsaWNhdGlvblNlcnZlci5JbnRlZ3JhdGlvbi5NZXNzYWdlRmxvdy5UcmFja2luZ1VJT3V0cHV0BQAAACE8U3RvcmVJbmNvbWluZ01zZz5rX19CYWNraW5nRmllbGQjPFRyYWNrTXNnUHJvcGVydGllcz5rX19CYWNraW5nRmllbGQjPFNlbGVjdGVkUHJvcGVydGllcz5rX19CYWNraW5nRmllbGQgPFRyYWNrRm9yQWxsTXNncz5rX19CYWNraW5nRmllbGQgPFJldGVudGlvblBvbGljeT5rX19CYWNraW5nRmllbGQAAAMAAAEBf1N5c3RlbS5Db2xsZWN0aW9ucy5HZW5lcmljLkxpc3RgMVtbU3lzdGVtLlN0cmluZywgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XV0BCAIAAAAAAQkDAAAAAQcAAAAEAwAAAH9TeXN0ZW0uQ29sbGVjdGlvbnMuR2VuZXJpYy5MaXN0YDFbW1N5c3RlbS5TdHJpbmcsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OV1dAwAAAAZfaXRlbXMFX3NpemUIX3ZlcnNpb24GAAAICAkEAAAAAAAAAAAAAAARBAAAAAAAAAAL" displayName="Xml One-Way Bridge">
+        <oneWayBridgeInPort>
+          <oneWayBridgeHasOneWayBridgeInPort Id="d70396ba-7aa8-44f5-9de5-8c09d08746b1">
+            <oneWayBridgeInPort Id="1b09ce84-ed57-4c43-978c-9c5d67f0a6da" name="OneWayBridgeInPort" />
+          </oneWayBridgeHasOneWayBridgeInPort>
+        </oneWayBridgeInPort>
+        <oneWayRoutePort>
+          <oneWayBridgeHasOneWayRoutePort Id="f73b7a80-6633-4349-a769-618188b300b7">
+            <oneWayRoutePort Id="8cedeb60-2fa9-4c69-a16e-bdb0ce0dcd3e" name="OneWayRoutePort">
+              <pushInPorts>
+                <oneWayRouteConnection Id="2d5c2481-f5aa-4454-9296-093cc3b3170b" filterCondition="1=1">
+                  <queueInPortMoniker Id="49b13041-2e20-40cf-93ba-5a9486b08997" />
+                  <routeAction />
+                </oneWayRouteConnection>
+              </pushInPorts>
+            </oneWayRoutePort>
+          </oneWayBridgeHasOneWayRoutePort>
+        </oneWayRoutePort>
+      </oneWayBridge>
+    </bridgeConfigurationModelHasEntities>
+    <bridgeConfigurationModelHasEntities Id="9031c506-81c1-4ad0-becd-f0e89b0ce49a">
+      <queue Id="7494f3c8-cb0d-41ac-8b76-e5cca2af3df3" entityName="SomeQueue" endpointConfigName="TextEncodedMessageBody">
+        <queueInPort>
+          <queueHasQueueInPort Id="56cdf3f8-4e2e-4ca7-9caa-cdddbd3d91eb">
+            <queueInPort Id="49b13041-2e20-40cf-93ba-5a9486b08997" name="QueueInPort" />
+          </queueHasQueueInPort>
+        </queueInPort>
+      </queue>
+    </bridgeConfigurationModelHasEntities>
+  </entities>
+</bridgeConfiguration>

@@ -1,0 +1,4 @@
+C:\Projects\Apress\Chapters\Chapter12\QueueServices Solution\QueueSender\bin\Debug\QueueSender.dll
+C:\Projects\Apress\Chapters\Chapter12\QueueServices Solution\QueueSender\bin\Debug\QueueSender.pdb
+C:\Projects\Apress\Chapters\Chapter12\QueueServices Solution\QueueSender\obj\Debug\QueueSender.dll
+C:\Projects\Apress\Chapters\Chapter12\QueueServices Solution\QueueSender\obj\Debug\QueueSender.pdb

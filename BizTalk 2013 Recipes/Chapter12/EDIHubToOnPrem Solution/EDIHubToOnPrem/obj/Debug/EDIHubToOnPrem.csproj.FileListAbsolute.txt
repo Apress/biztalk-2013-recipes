@@ -1,0 +1,5 @@
+C:\Projects\Apress\Chapters\Chapter12\EDIHubToOnPrem Solution\EDIHubToOnPrem\bin\Debug\EDIHubToOnPrem.dll
+C:\Projects\Apress\Chapters\Chapter12\EDIHubToOnPrem Solution\EDIHubToOnPrem\bin\Debug\EDIHubToOnPrem.pdb
+C:\Projects\Apress\Chapters\Chapter12\EDIHubToOnPrem Solution\EDIHubToOnPrem\obj\Debug\EDIHubToOnPrem.dll
+C:\Projects\Apress\Chapters\Chapter12\EDIHubToOnPrem Solution\EDIHubToOnPrem\obj\Debug\EDIHubToOnPrem.pdb
+C:\Projects\Apress\Chapters\Chapter12\EDIHubToOnPrem Solution\EDIHubToOnPrem\obj\Debug\EDIHubToOnPrem.csprojResolveAssemblyReference.cache

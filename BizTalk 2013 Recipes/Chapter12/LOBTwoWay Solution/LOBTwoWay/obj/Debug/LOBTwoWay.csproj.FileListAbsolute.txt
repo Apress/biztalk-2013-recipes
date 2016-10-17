@@ -1,0 +1,5 @@
+C:\Projects\Apress\Chapters\Chapter12\LOBTwoWay Solution\LOBTwoWay\bin\Debug\LOBTwoWay.dll
+C:\Projects\Apress\Chapters\Chapter12\LOBTwoWay Solution\LOBTwoWay\bin\Debug\LOBTwoWay.pdb
+C:\Projects\Apress\Chapters\Chapter12\LOBTwoWay Solution\LOBTwoWay\obj\Debug\LOBTwoWay.csprojResolveAssemblyReference.cache
+C:\Projects\Apress\Chapters\Chapter12\LOBTwoWay Solution\LOBTwoWay\obj\Debug\LOBTwoWay.dll
+C:\Projects\Apress\Chapters\Chapter12\LOBTwoWay Solution\LOBTwoWay\obj\Debug\LOBTwoWay.pdb

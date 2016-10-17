@@ -1,0 +1,15 @@
+<ns0:NewHireList xmlns:ns0="http://CreatingAndTestingRules.NewHire">
+  <DateTime>2010-08-04T18:00:00</DateTime>
+  <Person>
+    <ID>1</ID>
+    <Name>Mary</Name>
+    <Role>INVALID APPLICANT</Role>
+    <Age>31</Age>
+  </Person>
+  <Person>
+    <ID>2</ID>
+    <Name>Windy</Name>
+    <Role>Organist</Role>
+    <Age>38</Age>
+  </Person>
+</ns0:NewHireList>

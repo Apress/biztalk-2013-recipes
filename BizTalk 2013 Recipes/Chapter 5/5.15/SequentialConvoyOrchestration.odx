@@ -1,0 +1,224 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="a2679f44-4fa2-4711-b245-3d3d9e0c85a5" LowerBound="1.1" HigherBound="48.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="SequentialConvoyOrchestration" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="aacf0ad9-933b-44ab-b907-5b8ec28b9e6e" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="oprtReceiveOrderMessageType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="7b2e63c7-4f33-4403-928d-a77fe76fa0a1" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="9c37fc9f-3231-463e-9d22-35ebd0c083b7" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.57">
+                    <om:Property Name="Ref" Value="SequentialConvoys.FinancialTransactionSchema" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="760b1bb3-9294-4b31-b67f-3337ed337430" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="oprtSendOrderMessageType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="e78d459a-416f-47c2-90c1-2553884ef11a" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="0cf637b7-554a-4a30-a6a1-ee2cb1d71984" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.57">
+                    <om:Property Name="Ref" Value="SequentialConvoys.FinancialTransactionSchema" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="CorrelationType" OID="63fc0108-f5b5-457f-9679-4238712369cd" ParentLink="Module_CorrelationType" LowerBound="18.1" HigherBound="22.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReceivePortNameCorrelationType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PropertyRef" OID="b2544eb6-36ed-4e24-bf66-8831b947b838" ParentLink="CorrelationType_PropertyRef" LowerBound="20.9" HigherBound="20.28">
+                <om:Property Name="Ref" Value="BTS.ReceivePortName" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PropertyRef_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="544c7fee-da13-457d-a733-916d1aa88803" ParentLink="Module_ServiceDeclaration" LowerBound="22.1" HigherBound="47.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="BasicSequentialConvoy" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="d99768f7-223a-40f5-9880-e06e90ebcb37" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="31.1" HigherBound="32.1">
+                <om:Property Name="InitialValue" Value="true" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Boolean" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Loop" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="CorrelationDeclaration" OID="be23e536-9360-41bd-99c9-83827a086ed3" ParentLink="ServiceDeclaration_CorrelationDeclaration" LowerBound="29.1" HigherBound="30.1">
+                <om:Property Name="Type" Value="SequentialConvoyOrchestration.ReceivePortNameCorrelationType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceivePortNameCorrelationSet" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="StatementRef" OID="f3c9408c-2e23-4349-b955-60dbdaf4c693" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="35.97" HigherBound="35.137">
+                    <om:Property Name="Initializes" Value="True" />
+                    <om:Property Name="Ref" Value="262aff89-8acf-431f-b62d-8d98bce5abbe" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_1" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="StatementRef" OID="be58b1e3-20a0-41a5-9374-1c1adea90e75" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="43.92" HigherBound="43.121">
+                    <om:Property Name="Initializes" Value="False" />
+                    <om:Property Name="Ref" Value="fda366e9-4cb6-4d15-a182-60c314da31ee" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_2" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="b7e65a93-29bd-4d79-a9b1-6f43ab77e81e" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="30.1" HigherBound="31.1">
+                <om:Property Name="Type" Value="SequentialConvoys.FinancialTransactionSchema" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FinancialTransactionMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="b23be967-0cc0-4084-891b-7aa1379b2d8b" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="262aff89-8acf-431f-b62d-8d98bce5abbe" ParentLink="ServiceBody_Statement" LowerBound="34.1" HigherBound="37.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="oprtReceiveOrderMessage" />
+                    <om:Property Name="MessageName" Value="FinancialTransactionMessage" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive Order Message" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="While" OID="a0a44576-e19a-484a-86e5-5b629289b9b4" ParentLink="ServiceBody_Statement" LowerBound="37.1" HigherBound="45.1">
+                    <om:Property Name="Expression" Value="Loop == true" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Loop Forever" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Send" OID="d5727070-0af3-400c-ae98-0c7b18011e70" ParentLink="ComplexStatement_Statement" LowerBound="40.1" HigherBound="42.1">
+                        <om:Property Name="PortName" Value="oprtSendOrderMessage" />
+                        <om:Property Name="MessageName" Value="FinancialTransactionMessage" />
+                        <om:Property Name="OperationName" Value="Operation_1" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Send Order Message" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Receive" OID="fda366e9-4cb6-4d15-a182-60c314da31ee" ParentLink="ComplexStatement_Statement" LowerBound="42.1" HigherBound="44.1">
+                        <om:Property Name="Activate" Value="False" />
+                        <om:Property Name="PortName" Value="oprtReceiveOrderMessage" />
+                        <om:Property Name="MessageName" Value="FinancialTransactionMessage" />
+                        <om:Property Name="OperationName" Value="Operation_1" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Receive Next Order Message" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="a303e005-7ac2-42d4-80dd-ddb584e08886" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="25.1" HigherBound="27.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="SequentialConvoyOrchestration.oprtReceiveOrderMessageType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="oprtReceiveOrderMessage" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="c60f6978-7402-4a3e-8432-0161b4dd8ef2" ParentLink="PortDeclaration_CLRAttribute" LowerBound="25.1" HigherBound="26.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="842df164-6ded-40e0-b30c-e7db0f8bda43" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="27.1" HigherBound="29.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="SequentialConvoyOrchestration.oprtSendOrderMessageType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="oprtSendOrderMessage" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="052e92a8-848e-415d-ba9b-431349a55892" ParentLink="PortDeclaration_CLRAttribute" LowerBound="27.1" HigherBound="28.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module SequentialConvoyOrchestration
+{
+    internal porttype oprtReceiveOrderMessageType
+    {
+        oneway Operation_1
+        {
+            SequentialConvoys.FinancialTransactionSchema
+        };
+    };
+    internal porttype oprtSendOrderMessageType
+    {
+        oneway Operation_1
+        {
+            SequentialConvoys.FinancialTransactionSchema
+        };
+    };
+    internal correlationtype ReceivePortNameCorrelationType
+    {
+        BTS.ReceivePortName
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service BasicSequentialConvoy
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements oprtReceiveOrderMessageType oprtReceiveOrderMessage;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses oprtSendOrderMessageType oprtSendOrderMessage;
+        correlation ReceivePortNameCorrelationType ReceivePortNameCorrelationSet;
+        message SequentialConvoys.FinancialTransactionSchema FinancialTransactionMessage;
+        System.Boolean Loop;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("262aff89-8acf-431f-b62d-8d98bce5abbe")]
+            activate receive (oprtReceiveOrderMessage.Operation_1, FinancialTransactionMessage, initialize ReceivePortNameCorrelationSet);
+            Loop = true;
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("a0a44576-e19a-484a-86e5-5b629289b9b4")]
+            while (Loop == true)
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("d5727070-0af3-400c-ae98-0c7b18011e70")]
+                send (oprtSendOrderMessage.Operation_1, FinancialTransactionMessage);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("fda366e9-4cb6-4d15-a182-60c314da31ee")]
+                receive (oprtReceiveOrderMessage.Operation_1, FinancialTransactionMessage, ReceivePortNameCorrelationSet);
+            }
+        }
+    }
+}
+

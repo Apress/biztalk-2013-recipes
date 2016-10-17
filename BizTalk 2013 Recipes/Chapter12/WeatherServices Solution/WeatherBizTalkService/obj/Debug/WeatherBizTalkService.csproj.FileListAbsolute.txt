@@ -1,0 +1,5 @@
+C:\Projects\Apress\Chapters\Chapter12\WeatherServices Solution\WeatherBizTalkService\bin\Debug\WeatherBizTalkService.dll
+C:\Projects\Apress\Chapters\Chapter12\WeatherServices Solution\WeatherBizTalkService\bin\Debug\WeatherBizTalkService.pdb
+C:\Projects\Apress\Chapters\Chapter12\WeatherServices Solution\WeatherBizTalkService\obj\Debug\WeatherBizTalkService.csprojResolveAssemblyReference.cache
+C:\Projects\Apress\Chapters\Chapter12\WeatherServices Solution\WeatherBizTalkService\obj\Debug\WeatherBizTalkService.dll
+C:\Projects\Apress\Chapters\Chapter12\WeatherServices Solution\WeatherBizTalkService\obj\Debug\WeatherBizTalkService.pdb

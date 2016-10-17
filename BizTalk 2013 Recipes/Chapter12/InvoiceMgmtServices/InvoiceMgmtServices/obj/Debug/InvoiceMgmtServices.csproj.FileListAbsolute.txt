@@ -1,0 +1,5 @@
+C:\Projects\Apress\Chapters\Chapter12\InvoiceMgmtServices\InvoiceMgmtServices\bin\Debug\InvoiceMgmtServices.dll
+C:\Projects\Apress\Chapters\Chapter12\InvoiceMgmtServices\InvoiceMgmtServices\bin\Debug\InvoiceMgmtServices.pdb
+C:\Projects\Apress\Chapters\Chapter12\InvoiceMgmtServices\InvoiceMgmtServices\obj\Debug\InvoiceMgmtServices.csprojResolveAssemblyReference.cache
+C:\Projects\Apress\Chapters\Chapter12\InvoiceMgmtServices\InvoiceMgmtServices\obj\Debug\InvoiceMgmtServices.dll
+C:\Projects\Apress\Chapters\Chapter12\InvoiceMgmtServices\InvoiceMgmtServices\obj\Debug\InvoiceMgmtServices.pdb

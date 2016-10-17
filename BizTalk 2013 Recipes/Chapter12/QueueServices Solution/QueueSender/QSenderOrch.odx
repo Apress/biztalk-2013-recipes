@@ -1,0 +1,202 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="30e095ad-61f3-4a13-b43a-3d526eb20662" LowerBound="1.1" HigherBound="49.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="QueueSender" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="c54b1519-ad3b-452d-84b8-e5b7262fde06" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="FireAlertMsg_Rcv_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="0228b3e2-c62d-44c7-9070-61ff8494f65a" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="53fb6396-d937-459b-b326-105498189782" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.22">
+                    <om:Property Name="Ref" Value="QueueSender.FireEvent" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="eac15878-a655-4234-91a1-1e5dc0c26f5a" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="FireAlertMsg_Q_Snd_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="05819a56-4413-4a28-85bf-bab256fc32d0" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="e10d0d97-0f18-440f-bc04-8a81750bb74a" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.22">
+                    <om:Property Name="Ref" Value="QueueSender.FireEvent" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="4da32933-021e-47de-849a-d3a11619ba29" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="48.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="QSenderOrch" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="MessageDeclaration" OID="b3cf48f9-858b-4271-b70e-e8de3f0be34f" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="QueueSender.FireEvent" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Msg" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="52cc9a5f-3cd5-4260-af32-652f51b4a5b1" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="QueueSender.FireEvent" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MsgUpdated" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="e51df31a-a4f9-4c52-a750-0ab20db54076" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="b21de1b2-86be-4c35-85c7-ad5b53b2a002" ParentLink="ServiceBody_Statement" LowerBound="29.1" HigherBound="31.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="FireAlertMsg_Rcv_Port" />
+                    <om:Property Name="MessageName" Value="Msg" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_FireAlertMsg" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="55809969-21ce-4485-87b8-4cab101fba7e" ParentLink="ServiceBody_Statement" LowerBound="31.1" HigherBound="33.1">
+                    <om:Property Name="Expression" Value="System.Diagnostics.Debug.WriteLine(&quot;Received a message in QSenderOrch.&quot;);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Debug" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="Construct" OID="15adfe33-ba21-48f7-924e-d2b3d14d7542" ParentLink="ServiceBody_Statement" LowerBound="33.1" HigherBound="42.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Construct MsUpdated" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageAssignment" OID="d7220e66-7673-46ad-8212-d77ea758d36a" ParentLink="ComplexStatement_Statement" LowerBound="36.1" HigherBound="41.1">
+                        <om:Property Name="Expression" Value="MsgUpdated = Msg;&#xD;&#xA;MsgUpdated(*) = Msg(*);&#xD;&#xA;//MsgUpdated(SBMessaging.SessionId) = Msg.ZipCode;&#xD;&#xA;//System.Diagnostics.Debug.WriteLine(&quot;Set Session ID:&quot; + Msg.ZipCode);&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="MessageAssignment_1" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="ab6cd4e9-deae-41d0-a9b8-421916e700da" ParentLink="Construct_MessageRef" LowerBound="34.23" HigherBound="34.33">
+                        <om:Property Name="Ref" Value="MsgUpdated" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="f8f29da8-986f-447a-b4a8-6ec141b90261" ParentLink="ServiceBody_Statement" LowerBound="42.1" HigherBound="44.1">
+                    <om:Property Name="Expression" Value="System.Diagnostics.Debug.WriteLine(&quot;About to send out to a Queue.&quot;);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Debug" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Send" OID="d3194361-2024-49ab-b0b2-6e7474c5e87f" ParentLink="ServiceBody_Statement" LowerBound="44.1" HigherBound="46.1">
+                    <om:Property Name="PortName" Value="FireAlertMsg_Q_Snd_Port" />
+                    <om:Property Name="MessageName" Value="MsgUpdated" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_FireAlertMsg" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="725d46ec-028c-4c07-b2a0-640f758fdb34" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="QueueSender.FireAlertMsg_Rcv_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FireAlertMsg_Rcv_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="64e6b242-b79d-4ca3-9d40-8aa2f38017dd" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="738f7920-3e25-47e8-a69d-e6329b1c1f27" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="QueueSender.FireAlertMsg_Q_Snd_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FireAlertMsg_Q_Snd_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="0671488b-00ba-4b03-ae78-7643a2baef31" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module QueueSender
+{
+    internal porttype FireAlertMsg_Rcv_PortType
+    {
+        oneway Operation_1
+        {
+            FireEvent
+        };
+    };
+    internal porttype FireAlertMsg_Q_Snd_PortType
+    {
+        oneway Operation_1
+        {
+            FireEvent
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service QSenderOrch
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements FireAlertMsg_Rcv_PortType FireAlertMsg_Rcv_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses FireAlertMsg_Q_Snd_PortType FireAlertMsg_Q_Snd_Port;
+        message FireEvent Msg;
+        message FireEvent MsgUpdated;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("b21de1b2-86be-4c35-85c7-ad5b53b2a002")]
+            activate receive (FireAlertMsg_Rcv_Port.Operation_1, Msg);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("55809969-21ce-4485-87b8-4cab101fba7e")]
+            System.Diagnostics.Debug.WriteLine("Received a message in QSenderOrch.");
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("15adfe33-ba21-48f7-924e-d2b3d14d7542")]
+            construct MsgUpdated
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("d7220e66-7673-46ad-8212-d77ea758d36a")]
+                MsgUpdated = Msg;
+                MsgUpdated(*) = Msg(*);
+                //MsgUpdated(SBMessaging.SessionId) = Msg.ZipCode;
+                //System.Diagnostics.Debug.WriteLine("Set Session ID:" + Msg.ZipCode);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("f8f29da8-986f-447a-b4a8-6ec141b90261")]
+            System.Diagnostics.Debug.WriteLine("About to send out to a Queue.");
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("d3194361-2024-49ab-b0b2-6e7474c5e87f")]
+            send (FireAlertMsg_Q_Snd_Port.Operation_1, MsgUpdated);
+        }
+    }
+}
+

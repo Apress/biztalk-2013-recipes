@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://SQLReceiveAdapter" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:appinfo>
+      <msbtssql:sqlScript value="exec [CustomerToBizTalk]" xmlns:msbtssql="http://schemas.microsoft.com/BizTalk/2003" />
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Customer_Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="Customer" xmlns:q1="http://SQLReceiveAdapter" type="q1:CustomerType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CustomerType">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="CustomerID" xmlns:q2="http://SQLReceiveAdapter" type="q2:CustomerIDType" />
+      <xs:element name="CustomerName" xmlns:q3="http://SQLReceiveAdapter" type="q3:CustomerNameType" />
+      <xs:element name="Address" xmlns:q4="http://SQLReceiveAdapter" type="q4:AddressType" />
+      <xs:element name="City" xmlns:q5="http://SQLReceiveAdapter" type="q5:CityType" />
+      <xs:element name="Region" xmlns:q6="http://SQLReceiveAdapter" type="q6:RegionType" />
+      <xs:element name="PostalCode" xmlns:q7="http://SQLReceiveAdapter" type="q7:PostalCodeType" />
+      <xs:element name="RecordStatus" xmlns:q8="http://SQLReceiveAdapter" type="q8:RecordStatusType" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="CustomerIDType">
+    <xs:simpleContent>
+      <xs:extension base="xs:int" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CustomerNameType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="AddressType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CityType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RegionType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="PostalCodeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string" />
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RecordStatusType">
+    <xs:simpleContent>
+      <xs:extension base="xs:unsignedByte" />
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

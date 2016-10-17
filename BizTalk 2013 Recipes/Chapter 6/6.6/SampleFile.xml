@@ -1,0 +1,8 @@
+<ns0:Customer_Request xmlns:ns0="http://SQLAdapterUpdategram">
+  <ns0:sync>
+    <ns0:after>
+      <ns0:Customer CustomerName="Alice" Address="King" City="Seattle"
+Region="WA" PostalCode="98005" />
+    </ns0:after>
+  </ns0:sync>
+</ns0:Customer_Request>

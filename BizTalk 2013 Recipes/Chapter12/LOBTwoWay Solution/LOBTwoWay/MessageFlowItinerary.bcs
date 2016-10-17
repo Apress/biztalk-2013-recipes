@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bridgeConfiguration xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="caa4deb3-5f37-455a-8430-ba32a87245ce" biztalkServiceUrl="https://apressbtsvcs.biztalk.windows.net" xmlns="http://schemas.microsoft.com/dsltools/BridgeConfiguration">
+  <entities>
+    <bridgeConfigurationModelHasEntities Id="5d4ff9e2-eb03-43cd-bb9d-9a0b94c0a7d3">
+      <requestReplyBridge Id="a8518881-4e61-4d55-a8ed-7920464694fa" entityName="LOBTwoWayBridge" address="LOBTwoWayBridge" pipelineTemplateName="xmlPipeline" trackingOptions="" displayName="Xml Request-Reply Bridge">
+        <twoWayBridgeInPort>
+          <requestReplyBridgeHasTwoWayBridgeInPort Id="f200e9e9-5c1f-4b18-8e37-4bdfd49dd277">
+            <twoWayBridgeInPort Id="6ba15ef4-daee-421a-98f6-c628a06aebbc" name="TwoWayBridgeInPort" />
+          </requestReplyBridgeHasTwoWayBridgeInPort>
+        </twoWayBridgeInPort>
+        <twoWayRoutePort>
+          <requestReplyBridgeHasTwoWayRoutePort Id="fbe09ba6-80ca-48ee-bf2c-5384a08536de">
+            <twoWayRoutePort Id="833ae142-40a7-4df4-820a-0cdb7202ef93" name="TwoWayRoutePort">
+              <twoWayPushInPorts>
+                <twoWayRouteConnection Id="fad79bca-2025-4090-89ce-8c6d0c5a8dc4" filterCondition="1=1">
+                  <sqlPushInMoniker Id="7a64de41-f84d-4514-9da4-999b4ccbdc07" />
+                  <routeAction />
+                </twoWayRouteConnection>
+              </twoWayPushInPorts>
+            </twoWayRoutePort>
+          </requestReplyBridgeHasTwoWayRoutePort>
+        </twoWayRoutePort>
+      </requestReplyBridge>
+    </bridgeConfigurationModelHasEntities>
+    <bridgeConfigurationModelHasEntities Id="eb20f0dd-58b0-48f7-acd2-15c085d3a45e">
+      <sql Id="27edbb98-a249-434b-826f-136af96874fa" entityName="manageorders_getordersbycompcode" address="https://apressrecipens.servicebus.windows.net/manageorders/getordersbycompcode/" endpointConfigName="manageorders_getordersbycompcode">
+        <sqlPushIn>
+          <sqlHasPushIn Id="259fe1db-253e-4087-98f4-7e076d6b3604">
+            <sqlPushIn Id="7a64de41-f84d-4514-9da4-999b4ccbdc07" />
+          </sqlHasPushIn>
+        </sqlPushIn>
+      </sql>
+    </bridgeConfigurationModelHasEntities>
+  </entities>
+</bridgeConfiguration>

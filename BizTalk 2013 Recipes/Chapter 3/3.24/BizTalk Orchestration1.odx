@@ -1,0 +1,134 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="90e119bc-80fe-4c2b-91f9-d52f8414f2a8" LowerBound="1.1" HigherBound="23.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="TestingMaps" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="ffd67ec9-adf4-4fd2-95b5-8792d98656ea" ParentLink="Module_ServiceDeclaration" LowerBound="4.1" HigherBound="22.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="BizTalk_Orchestration1" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="ServiceBody" OID="91a2968d-dada-4750-bb79-d617f24f6c6b" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Construct" OID="11f765b0-2740-4775-a55c-10f64f287ae0" ParentLink="ServiceBody_Statement" LowerBound="12.1" HigherBound="20.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_1" />
+                    <om:Property Name="Signal" Value="False" />
+                    <om:Element Type="Transform" OID="7a37fb9f-be33-494e-8f09-c31571e59e4b" ParentLink="ComplexStatement_Statement" LowerBound="15.1" HigherBound="17.1">
+                        <om:Property Name="ClassName" Value="TestingMaps.Transform_1" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform_1" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessagePartRef" OID="b8a28809-95ba-4adc-9cb1-6ad3596db676" ParentLink="Transform_InputMessagePartRef" LowerBound="16.73" HigherBound="16.82">
+                            <om:Property Name="MessageRef" Value="msgPerson" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="7d01ba2c-18ed-496c-82bf-5bfbd5e44f89" ParentLink="Transform_InputMessagePartRef" LowerBound="16.84" HigherBound="16.98">
+                            <om:Property Name="MessageRef" Value="msgCompanyInfo" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="ce595f55-eb93-4098-b306-4ef287761df7" ParentLink="Transform_OutputMessagePartRef" LowerBound="16.28" HigherBound="16.44">
+                            <om:Property Name="MessageRef" Value="msgTargetCompany" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_3" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Transform" OID="42d6e20b-a079-429d-a556-f3404d459c46" ParentLink="ComplexStatement_Statement" LowerBound="17.1" HigherBound="19.1">
+                        <om:Property Name="ClassName" Value="TestingMaps.Transform_2" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform_2" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessagePartRef" OID="1d9f6d57-b205-4b66-9225-79189091bfcd" ParentLink="Transform_InputMessagePartRef" LowerBound="18.82" HigherBound="18.98">
+                            <om:Property Name="MessageRef" Value="msgTargetCompany" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_4" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="36b2397d-8a6a-4aae-aa7d-bde488e210de" ParentLink="Transform_OutputMessagePartRef" LowerBound="18.28" HigherBound="18.37">
+                            <om:Property Name="MessageRef" Value="msgPerson" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_5" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="dcd42d4b-cf06-40aa-ad66-0bbe28886619" ParentLink="Transform_OutputMessagePartRef" LowerBound="18.39" HigherBound="18.53">
+                            <om:Property Name="MessageRef" Value="msgCompanyInfo" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_6" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="9d81945a-d1bb-4ee8-b589-09eaf33a8411" ParentLink="Construct_MessageRef" LowerBound="13.23" HigherBound="13.39">
+                        <om:Property Name="Ref" Value="msgTargetCompany" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="d6059682-d20b-40ca-9aee-cba51e9ea01c" ParentLink="Construct_MessageRef" LowerBound="13.41" HigherBound="13.50">
+                        <om:Property Name="Ref" Value="msgPerson" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="24e6c7bb-e185-49e3-8531-9d26018fa4e4" ParentLink="Construct_MessageRef" LowerBound="13.52" HigherBound="13.66">
+                        <om:Property Name="Ref" Value="msgCompanyInfo" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="a5202be8-5c3f-418f-a433-516873ce5cd6" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="7.1" HigherBound="8.1">
+                <om:Property Name="Type" Value="TestingMaps.Person" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgPerson" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="a42265a8-854f-495c-8b9b-53386a74dc66" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="8.1" HigherBound="9.1">
+                <om:Property Name="Type" Value="TestingMaps.SourceCompanyInfo" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgCompanyInfo" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="bccaebdf-f636-4977-983d-a6214443ee42" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="9.1" HigherBound="10.1">
+                <om:Property Name="Type" Value="TestingMaps.Company" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgTargetCompany" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module TestingMaps
+{
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service BizTalk_Orchestration1
+    {
+        message Person msgPerson;
+        message SourceCompanyInfo msgCompanyInfo;
+        message Company msgTargetCompany;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("11f765b0-2740-4775-a55c-10f64f287ae0")]
+            construct msgTargetCompany, msgPerson, msgCompanyInfo
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("7a37fb9f-be33-494e-8f09-c31571e59e4b")]
+                transform (msgTargetCompany) = TestingMaps.Transform_1 (msgPerson, msgCompanyInfo);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("42d6e20b-a079-429d-a556-f3404d459c46")]
+                transform (msgPerson, msgCompanyInfo) = TestingMaps.Transform_2 (msgTargetCompany);
+            }
+        }
+    }
+}
+

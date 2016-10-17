@@ -1,0 +1,132 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="944b6a9a-c00c-49e3-9982-d6b38ca7c4eb" LowerBound="1.1" HigherBound="27.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="BasicCorrelations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="21b8f36d-6d36-4cb8-b5fb-a0b601e8ea2a" ParentLink="Module_ServiceDeclaration" LowerBound="8.1" HigherBound="26.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="BasicCorr" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="CorrelationDeclaration" OID="483ba432-d8af-4dc1-929e-f5595d47e335" ParentLink="ServiceDeclaration_CorrelationDeclaration" LowerBound="11.1" HigherBound="12.1">
+                <om:Property Name="Type" Value="BasicCorrelations.ServiceIDType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ServiceIDCorrelation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="StatementRef" OID="b188b100-00ed-4801-b5cd-c86c1d2fd781" ParentLink="CorrelationDeclaration_StatementRef">
+                    <om:Property Name="Initializes" Value="True" />
+                    <om:Property Name="Ref" Value="b464ba23-358a-4296-83d8-adeaa3f20aac" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_1" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="StatementRef" OID="24c463dd-79f7-42a5-b759-0f5fb7eb8061" ParentLink="CorrelationDeclaration_StatementRef">
+                    <om:Property Name="Initializes" Value="False" />
+                    <om:Property Name="Ref" Value="1020e551-de65-41f9-826c-f85f46acf091" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_2" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="9ec60740-f0ad-4152-b831-95f51754be1f" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="8153da2a-7ef9-45ce-bb8a-f3b7676dc6d9" ParentLink="ServiceBody_Statement" LowerBound="14.1" HigherBound="16.1">
+                    <om:Property Name="Activate" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Support_Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Send" OID="b464ba23-358a-4296-83d8-adeaa3f20aac" ParentLink="ServiceBody_Statement" LowerBound="16.1" HigherBound="18.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_To_CRM" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Listen" OID="caa0f2c9-066d-48ba-bb27-5752b9fcc0b7" ParentLink="ServiceBody_Statement" LowerBound="18.1" HigherBound="24.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Listen_for_a_response_or_elevate_issue" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="ListenBranch" OID="fe704e36-ee8f-4afc-b589-f0baee457639" ParentLink="ReallyComplexStatement_Branch" LowerBound="18.1" HigherBound="20.1">
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ListenBranch_1" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Send" OID="3c5f15e0-cd42-4499-a64e-f6acf194c19a" ParentLink="ComplexStatement_Statement">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Send_Escalation" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Delay" OID="924fa098-617a-4e20-a1d8-e08d8b41aec0" ParentLink="ListenBranch_Statement">
+                            <om:Property Name="Timeout" Value="new System.TimeSpan(2,0,0,0)" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Delay_2_days" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="ListenBranch" OID="f41f70ce-783f-44e0-9a8a-ac5392364acb" ParentLink="ReallyComplexStatement_Branch" LowerBound="20.1" HigherBound="24.1">
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ListenBranch_2" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Send" OID="cb35a63c-a63e-4138-916f-5f6d4800dff6" ParentLink="ComplexStatement_Statement">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Send_To_Website" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Receive" OID="1020e551-de65-41f9-826c-f85f46acf091" ParentLink="ListenBranch_Statement">
+                            <om:Property Name="Activate" Value="False" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Receive_Response" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="CorrelationType" OID="1ffb3c54-9dde-4c1b-b9cc-dfc3fe8cd7e8" ParentLink="Module_CorrelationType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ServiceIDType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PropertyRef" OID="e12968f9-fa1d-4110-940f-150ac570a7fd" ParentLink="CorrelationType_PropertyRef" LowerBound="6.9" HigherBound="6.33">
+                <om:Property Name="Ref" Value="BasicCorrelations.PropertySchema.ServiceID" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PropertyRef_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module BasicCorrelations
+{
+    internal correlationtype ServiceIDType
+    {
+        PropertySchema.ServiceID
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service BasicCorr
+    {
+        correlation ServiceIDType ServiceIDCorrelation;
+        body ()
+        {
+
+#error "No Message."
+
+#error "No Message."
+
+#error "Errors exist for one or more children."
+
+#error "Errors exist for one or more children."
+
+#error "No Message."
+        }
+    }
+}
+

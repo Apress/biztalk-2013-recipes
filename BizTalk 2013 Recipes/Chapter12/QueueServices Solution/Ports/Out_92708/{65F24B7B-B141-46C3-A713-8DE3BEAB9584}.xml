@@ -1,0 +1,1 @@
+﻿<?xml version="1.0" encoding="utf-8"?><FireEvent xmlns="http://EventConsumerProj.FireEvent" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><AlertColor>RED</AlertColor><AlertMessage>Emergency - Notify Fire Dept.</AlertMessage><AlertType>Emergency</AlertType><Temperature>112</Temperature><ZipCode>92708</ZipCode></FireEvent>

@@ -1,0 +1,1 @@
+﻿<?xml version="1.0" encoding="utf-8"?><WeatherEvent xmlns="http://WeatherBizTalkService.WeatherEvent" xmlns:i="http://www.w3.org/2001/XMLSchema-instance"><AffectedArea>Fountain Valley</AffectedArea><EventType>Wind</EventType><IsAlert>true</IsAlert><Temperature>108</Temperature><ZipCode>92708</ZipCode></WeatherEvent>

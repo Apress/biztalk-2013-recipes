@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?><entry xmlns="http://www.w3.org/2005/Atom"><id>uuid:742db31f-eba1-4f92-8429-c4330e0860f7;id=2</id><title type="text">FireAlertBridge</title><updated>2013-10-30T17:12:57Z</updated><link rel="self" href="FireAlertBridge" /><content type="application/xml"><Pipeline xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/integration"><Configuration><configuration xmlns="http://schemas.microsoft.com/.NetConfiguration/v2.0">
+  <system.serviceModel>
+    <behaviors>
+      <endpointBehaviors>
+        <behavior name="FireAlertQueue_behavior">
+          <transportClientEndpointBehavior>
+            <clientCredentials>
+              <sharedSecret issuerName="" issuerSecret="" />
+            </clientCredentials>
+            <tokenProvider>
+              <sharedSecret issuerName="owner" issuerSecret="tXj+aIoZFKPt2X0dcaRCkUojrRaefzU55t6xaaHbWy4=" />
+            </tokenProvider>
+          </transportClientEndpointBehavior>
+        </behavior>
+      </endpointBehaviors>
+    </behaviors>
+    <bindings>
+      <customBinding>
+        <binding name="FireAlertQueue_binding">
+          <webMessageEncoding>
+            <readerQuotas maxDepth="2147483647" maxStringContentLength="2147483647" maxArrayLength="2147483647" maxBytesPerRead="67108864" maxNameTableCharCount="2147483647" />
+          </webMessageEncoding>
+          <netMessagingTransport />
+        </binding>
+      </customBinding>
+    </bindings>
+    <client>
+      <endpoint address="sb://apressrecipens.servicebus.windows.net/firealertqueue" behaviorConfiguration="FireAlertQueue_behavior" binding="customBinding" bindingConfiguration="FireAlertQueue_binding" contract="System.ServiceModel.Routing.ISimplexDatagramRouter" name="FireAlertQueue" />
+    </client>
+    <extensions>
+      <behaviorExtensions>
+        <add name="transportClientEndpointBehavior" type="Microsoft.ServiceBus.Configuration.TransportClientEndpointBehaviorElement, Microsoft.ServiceBus, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+      </behaviorExtensions>
+      <bindingElementExtensions>
+        <add name="netMessagingTransport" type="Microsoft.ServiceBus.Messaging.Configuration.NetMessagingTransportExtensionElement, Microsoft.ServiceBus, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+      </bindingElementExtensions>
+      <bindingExtensions>
+        <add name="basicHttpRelayBinding" type="Microsoft.ServiceBus.Configuration.BasicHttpRelayBindingCollectionElement, Microsoft.ServiceBus, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+        <add name="webHttpRelayBinding" type="Microsoft.ServiceBus.Configuration.WebHttpRelayBindingCollectionElement, Microsoft.ServiceBus, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+        <add name="ws2007HttpRelayBinding" type="Microsoft.ServiceBus.Configuration.WS2007HttpRelayBindingCollectionElement, Microsoft.ServiceBus, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+        <add name="netTcpRelayBinding" type="Microsoft.ServiceBus.Configuration.NetTcpRelayBindingCollectionElement, Microsoft.ServiceBus, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+        <add name="netMessagingBinding" type="Microsoft.ServiceBus.Messaging.Configuration.NetMessagingBindingCollectionElement, Microsoft.ServiceBus, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+      </bindingExtensions>
+    </extensions>
+  </system.serviceModel>
+  <pipelines>
+    <extensions>
+      <pipeline>
+        <add name="oneWayXmlPipeline" type="Microsoft.ApplicationServer.Integration.Pipeline.Activities.Configuration.OneWayXmlVETERPiplineCollectionElement, Microsoft.ApplicationServer.Integration.Pipeline.Activities.Xml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+      </pipeline>
+      <lookupProviders>
+        <add name="SqlTable" type="Microsoft.ApplicationServer.Integration.Pipeline.Configuration.SqlTableLookupCollectionElement, Microsoft.ApplicationServer.Integration.Pipeline.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+      </lookupProviders>
+    </extensions>
+    <pipelines>
+      <oneWayXmlPipeline>
+        <pipeline name="name">
+          <destinations>
+            <queue name="FireAlertQueue" contractType="OneWay" endpointName="FireAlertQueue" />
+          </destinations>
+          <trackingProfiles>
+            <add name="default" />
+          </trackingProfiles>
+          <routeTables>
+            <routeTable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="">
+              <entries>
+                <staticRouteEntry destinationName="FireAlertQueue">
+                  <sqlFilterCondition sqlExpression="1=1" />
+                  <protocolProperties />
+                </staticRouteEntry>
+              </entries>
+            </routeTable>
+          </routeTables>
+          <decode enabled="true" />
+          <validator enabled="true">
+            <xmlValidator>
+              <messageTypes>
+                <add messageType="http://WeatherBizTalkService.WeatherEvent#WeatherEvent" schemaPath="/WeatherEvent.xsd" />
+              </messageTypes>
+            </xmlValidator>
+          </validator>
+          <requestMessageExtractor enabled="true" />
+          <requestMessageTransform enabled="true">
+            <xmlTransform>
+              <transforms>
+                <add predicate="X_PIPELINE_MESSAGETYPE = 'http://WeatherBizTalkService.WeatherEvent#WeatherEvent'" transformPath="/WeatherEvent_To_FireEvent.trfm" />
+              </transforms>
+            </xmlTransform>
+          </requestMessageTransform>
+          <transformedMessageExtractor enabled="true" />
+          <encode enabled="true" />
+          <route enabled="true" />
+        </pipeline>
+      </oneWayXmlPipeline>
+    </pipelines>
+    <tracking>
+      <profiles>
+        <add name="default">
+          <pipeline>
+            <route trackSuccess="true" />
+          </pipeline>
+        </add>
+      </profiles>
+    </tracking>
+  </pipelines>
+</configuration></Configuration><PipelineTemplateName>oneWayXmlPipeline</PipelineTemplateName></Pipeline></content></entry>

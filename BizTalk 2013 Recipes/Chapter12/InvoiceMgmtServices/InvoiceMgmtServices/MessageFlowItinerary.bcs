@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bridgeConfiguration xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="843f7214-d28c-4a8f-8ad4-2eba1e10c1ad" biztalkServiceUrl="https://apressbtsvcs.biztalk.windows.net" xmlns="http://schemas.microsoft.com/dsltools/BridgeConfiguration">
+  <entities>
+    <bridgeConfigurationModelHasEntities Id="2c620b48-f306-43b1-a4fb-a119d84d15a8">
+      <oneWayBridge Id="513c4af5-1208-4290-abbd-a19af8a2d873" entityName="EDIInvoiceBridge" address="EDIInvoiceBridge" pipelineTemplateName="oneWayXmlPipeline" trackingOptions="" displayName="Xml One-Way Bridge">
+        <oneWayBridgeInPort>
+          <oneWayBridgeHasOneWayBridgeInPort Id="254b1caa-22b9-49ce-9705-2b289f978b96">
+            <oneWayBridgeInPort Id="c9eecb64-5d01-412a-be0e-4d054193e652" name="OneWayBridgeInPort" />
+          </oneWayBridgeHasOneWayBridgeInPort>
+        </oneWayBridgeInPort>
+        <oneWayRoutePort>
+          <oneWayBridgeHasOneWayRoutePort Id="a7c70156-d2b5-439c-8cfc-447173128e5d">
+            <oneWayRoutePort Id="2eb04d0b-03aa-4708-87cf-e85a660b0a62" name="OneWayRoutePort">
+              <pushInPorts>
+                <oneWayRouteConnection Id="86fffed9-d5b4-4b79-b404-fa9f7a5d3423" filterCondition="1=1">
+                  <queueInPortMoniker Id="b482f37f-46b4-4518-8287-063e7bd8a4c7" />
+                  <routeAction />
+                </oneWayRouteConnection>
+              </pushInPorts>
+            </oneWayRoutePort>
+          </oneWayBridgeHasOneWayRoutePort>
+        </oneWayRoutePort>
+      </oneWayBridge>
+    </bridgeConfigurationModelHasEntities>
+    <bridgeConfigurationModelHasEntities Id="2a5bd663-ec87-482e-a397-101f81e2a137">
+      <queue Id="a72a2930-db92-469d-b797-2a5fb3f56680" entityName="InvoiceQueue" endpointConfigName="TextEncodedMessageBody">
+        <queueInPort>
+          <queueHasQueueInPort Id="127d8fef-773e-4ac4-8692-1e3914acf997">
+            <queueInPort Id="b482f37f-46b4-4518-8287-063e7bd8a4c7" name="QueueInPort" />
+          </queueHasQueueInPort>
+        </queueInPort>
+      </queue>
+    </bridgeConfigurationModelHasEntities>
+  </entities>
+</bridgeConfiguration>

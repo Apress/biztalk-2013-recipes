@@ -1,0 +1,9 @@
+<ns0:ApplicantApproval xmlns:ns0="http://Sample_Role_Link_Recipe.SampleNewHireRequest">
+  <ApplicantID>1000</ApplicantID> 
+  <Approver>ManagerParty</Approver> 
+  <Detail>
+    <SSN>508-03-4433</SSN> 
+    <Name>Wally McFally</Name> 
+    <Position>Technician</Position> 
+  </Detail>
+</ns0:ApplicantApproval>

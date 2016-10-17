@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bridgeConfigurationDiagram dslVersion="1.0.0.0" Id="11f3ff8a-ce74-43e2-a252-13814cb9b094" absoluteBounds="0, 0, 11, 8.5" name="MessageFlowItinerary">
+  <bridgeConfigurationMoniker Id="caa4deb3-5f37-455a-8430-ba32a87245ce" />
+  <nestedChildShapes>
+    <requestReplyBridgeShape Id="706fa44a-801b-4bcc-a5e8-0f2791fbfa9a" absoluteBounds="2.625, 2.25, 1.1, 0.9" fillColor="White">
+      <requestReplyBridgeMoniker Id="a8518881-4e61-4d55-a8ed-7920464694fa" />
+      <relativeChildShapes>
+        <inPortShape Id="67c3d779-5880-4fed-aac0-a6cd53e30055" absoluteBounds="2.575, 2.65, 0.1, 0.1" fillColor="Transparent">
+          <twoWayBridgeInPortMoniker Id="6ba15ef4-daee-421a-98f6-c628a06aebbc" />
+        </inPortShape>
+        <outPortShape Id="a2ce78f7-fd87-49cb-96a3-5987d4dce324" absoluteBounds="3.675, 2.65, 0.1, 0.1" fillColor="Transparent">
+          <twoWayRoutePortMoniker Id="833ae142-40a7-4df4-820a-0cdb7202ef93" />
+        </outPortShape>
+      </relativeChildShapes>
+    </requestReplyBridgeShape>
+    <sqlShape Id="93d49f74-e439-48b9-87fc-bccc62a081fe" absoluteBounds="5.375, 2.25, 1, 1" fillColor="White">
+      <sqlMoniker Id="27edbb98-a249-434b-826f-136af96874fa" />
+      <relativeChildShapes>
+        <inPortShape Id="cd5024b4-911c-4de6-b8fc-2887cee2ba93" absoluteBounds="5.325, 2.7, 0.1, 0.1" fillColor="Transparent">
+          <sqlPushInMoniker Id="7a64de41-f84d-4514-9da4-999b4ccbdc07" />
+        </inPortShape>
+      </relativeChildShapes>
+    </sqlShape>
+    <twoWayRouteConnector Id="c67d8d77-c9ef-4fef-84a2-94870e4dfee0" edgePoints="[(3.775 : 2.7); (4.15 : 2.7); (4.15 : 2.75); (5.325 : 2.75)]" fixedFrom="Caller" fixedTo="Caller" color="ControlDarkDark">
+      <twoWayRouteConnectionMoniker Id="fad79bca-2025-4090-89ce-8c6d0c5a8dc4" />
+      <nodes>
+        <outPortShapeMoniker Id="a2ce78f7-fd87-49cb-96a3-5987d4dce324" />
+        <inPortShapeMoniker Id="cd5024b4-911c-4de6-b8fc-2887cee2ba93" />
+      </nodes>
+    </twoWayRouteConnector>
+  </nestedChildShapes>
+</bridgeConfigurationDiagram>

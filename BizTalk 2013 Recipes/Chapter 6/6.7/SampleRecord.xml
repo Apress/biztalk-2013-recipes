@@ -1,0 +1,4 @@
+<ns0:Customer_Request xmlns:ns0="http://SQLAdapterStoredProcedure">
+  <ns0:BizTalkToCustomerInsert Address="1241 Little Overlook" City="Grand Jct" CustomerName="Ciro A" 
+PostalCode="81502" Region="CO" /> 
+</ns0:Customer_Request> 

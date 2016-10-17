@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?><entry xmlns="http://www.w3.org/2005/Atom"><id>uuid:01b2d178-40a9-4d68-93d6-fa18ac98e6a6;id=10</id><title type="text">GetOrderResponse.xsd</title><updated>2013-10-25T21:10:15Z</updated><link rel="self" href="GetOrderResponse.xsd" /><content type="application/xml"><Artifact xmlns="http://schemas.microsoft.com/integration"><xs:schema xmlns="http://RelayReceipe.GetOrderResponse" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" targetNamespace="http://RelayReceipe.GetOrderResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="GetOrdersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="Orders">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="Order">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="OrderID" type="xs:string" />
+                    <xs:element name="OrderedDate" type="xs:dateTime" />
+                    <xs:element name="ShipDate" type="xs:dateTime" />
+                    <xs:element name="Quanity" type="xs:int" />
+                    <xs:element name="ProductID" type="xs:string" />
+                    <xs:element name="UnitPrice" type="xs:boolean" />
+                    <xs:element name="ShipToAddress" type="xs:string" />
+                    <xs:element name="BillToAddress" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema></Artifact></content></entry>

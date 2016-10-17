@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
+  <ruleset name="SamplePolicy">
+    <version major="1" minor="0" description="" modifiedby="WIN-LUNNMMJQUVE\Administrator" date="2010-08-04T10:26:37.7445695-07:00" />
+    <configuration />
+    <bindings>
+      <xmldocument ref="xml_31" doctype="NewHire" instances="16" selectivity="1" instance="0">
+        <selector>/*[local-name()='NewHireList' and namespace-uri()='http://CreatingAndTestingRules.NewHire']/*[local-name()='Person' and namespace-uri()='']</selector>
+        <selectoralias>/NewHireList/Person</selectoralias>
+        <schema>C:\Users\Administrator\Documents\Visual Studio 2010\Projects\CreatingAndTestingRules\CreatingAndTestingRules\NewHire.xsd</schema>
+      </xmldocument>
+    </bindings>
+    <rule name="SampleRule" priority="0" active="true">
+      <if>
+        <compare operator="less than">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="1c177bf4-a970-4669-a768-a74d33af190d" />
+          <lhs>
+            <function>
+              <vocabularylink uri="41962e0c-f276-4ec0-98b1-07714e2ae2f1" element="dcc75483-b0c9-4e7b-a3ea-92f19f62b20c" />
+              <xmldocumentmember xmldocumentref="xml_31" type="int" sideeffects="false">
+                <field>*[local-name()='Age' and namespace-uri()='']</field>
+                <fieldalias>Age</fieldalias>
+              </xmldocumentmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <vocabularylink uri="41962e0c-f276-4ec0-98b1-07714e2ae2f1" element="582dd3b2-b0fc-40b7-8b4d-07563cebb703" />
+              <int>35</int>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="41962e0c-f276-4ec0-98b1-07714e2ae2f1" element="f32e3fab-14a1-4e35-adef-abee13845f1c" />
+          <xmldocumentmember xmldocumentref="xml_31" type="string" sideeffects="true">
+            <field>*[local-name()='Role' and namespace-uri()='']</field>
+            <fieldalias>Role</fieldalias>
+            <argument>
+              <constant>
+                <string>INVALID APPLICANT</string>
+              </constant>
+            </argument>
+          </xmldocumentmember>
+        </function>
+      </then>
+    </rule>
+  </ruleset>
+</brl>

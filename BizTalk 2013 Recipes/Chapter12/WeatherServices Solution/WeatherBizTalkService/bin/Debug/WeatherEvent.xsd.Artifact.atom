@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?><entry xmlns="http://www.w3.org/2005/Atom"><id>uuid:742db31f-eba1-4f92-8429-c4330e0860f7;id=3</id><title type="text">WeatherEvent.xsd</title><updated>2013-10-30T17:12:57Z</updated><link rel="self" href="WeatherEvent.xsd" /><content type="application/xml"><Artifact xmlns="http://schemas.microsoft.com/integration"><xs:schema xmlns="http://WeatherBizTalkService.WeatherEvent" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" targetNamespace="http://WeatherBizTalkService.WeatherEvent" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="WeatherEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="EventType" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Temperature" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="PrimaryAffected">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="1" maxOccurs="1" name="AffectedArea" type="xs:string" />
+              <xs:element minOccurs="1" maxOccurs="1" name="ZipCode" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="SecondaryAffected">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="1" maxOccurs="unbounded" name="Areas">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element minOccurs="1" maxOccurs="1" name="AffectedArea" type="xs:string" />
+                    <xs:element minOccurs="1" maxOccurs="1" name="ZipCode" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="IsAlert" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema></Artifact></content></entry>

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bridgeConfiguration xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="b3f8ef14-9162-47ea-a4d3-9c74d1745e32" biztalkServiceUrl="https://apressbtsvcs.biztalk.windows.net" xmlns="http://schemas.microsoft.com/dsltools/BridgeConfiguration">
+  <entities>
+    <bridgeConfigurationModelHasEntities Id="2ec749f1-2fff-4ae0-b0f1-e074c2b3b74d">
+      <oneWayBridge Id="67b07296-4a4e-41e3-885b-160f6fcc4f6c" entityName="WeatherEventBridge" address="WeatherEventBridge" pipelineTemplateName="oneWayXmlPipeline" trackingOptions="" displayName="Xml One-Way Bridge">
+        <oneWayBridgeInPort>
+          <oneWayBridgeHasOneWayBridgeInPort Id="753f5302-e2eb-4146-8606-363f5e57c3f5">
+            <oneWayBridgeInPort Id="239797f7-97e7-4bb4-8a39-2135673c01ed" name="OneWayBridgeInPort" />
+          </oneWayBridgeHasOneWayBridgeInPort>
+        </oneWayBridgeInPort>
+        <oneWayRoutePort>
+          <oneWayBridgeHasOneWayRoutePort Id="64455033-514a-4e88-b777-7dfc87e57d89">
+            <oneWayRoutePort Id="4bb0c082-892d-47db-aa4d-7f79b4c076b4" name="OneWayRoutePort">
+              <pushInPorts>
+                <oneWayRouteConnection Id="b4216f04-ef91-42e3-bbaf-6d30026bb443" filterCondition="EventType='HighTemperature' OR EventType='Wind'  OR EventType='Cold' OR EventType='Flooding' ">
+                  <topicInPortMoniker Id="8ac897ba-a141-4243-8343-1973ca9d0d1f" />
+                  <routeAction />
+                </oneWayRouteConnection>
+                <oneWayRouteConnection Id="4308ff33-c211-4aa7-8d80-59fde4c6edf4" filterCondition="IsAlert=False">
+                  <queueInPortMoniker Id="88cf1f08-f266-4038-8120-cadd3e5f8acf" />
+                  <routeAction />
+                </oneWayRouteConnection>
+                <oneWayRouteConnection Id="8964c883-6015-476c-9687-7ded9cf9efc9" filterCondition="(EventType = 'HighTemperature' OR EventType='Wind' )AND Temperature &gt; 110  ">
+                  <oneWayBridgeInPortMoniker Id="51e78ebb-6878-46e0-bfce-ea28fb3359a0" />
+                  <routeAction />
+                </oneWayRouteConnection>
+              </pushInPorts>
+            </oneWayRoutePort>
+          </oneWayBridgeHasOneWayRoutePort>
+        </oneWayRoutePort>
+      </oneWayBridge>
+    </bridgeConfigurationModelHasEntities>
+    <bridgeConfigurationModelHasEntities Id="0af37f7a-41f9-40c7-9e72-1c9d13eede49">
+      <queue Id="751fd05f-443e-4847-ad6f-761f358d4cc6" entityName="FireAlertQueue" endpointConfigName="TextEncodedMessageBody">
+        <queueInPort>
+          <queueHasQueueInPort Id="0afa2b00-ce95-4426-932a-3f9ab56a952b">
+            <queueInPort Id="da9f94fd-1fb5-43be-9b6c-c22b09ffad4e" name="QueueInPort" />
+          </queueHasQueueInPort>
+        </queueInPort>
+      </queue>
+    </bridgeConfigurationModelHasEntities>
+    <bridgeConfigurationModelHasEntities Id="b13a6c83-209c-4cf5-9515-d9575560de9e">
+      <topic Id="35877613-b6eb-4c63-b3cf-0f6d09b21b2d" entityName="WeatherAlertTopic" endpointConfigName="TextEncodedMessageBody">
+        <topicInPort>
+          <topicHasTopicInPort Id="22a7481c-e619-4767-9aa3-a400aa5f6c46">
+            <topicInPort Id="8ac897ba-a141-4243-8343-1973ca9d0d1f" name="TopicInPort" />
+          </topicHasTopicInPort>
+        </topicInPort>
+      </topic>
+    </bridgeConfigurationModelHasEntities>
+    <bridgeConfigurationModelHasEntities Id="fd59678b-e504-4464-94c9-14827aca0c6b">
+      <queue Id="1670212d-fdd8-4d07-84f4-c05113035507" entityName="NormalEventQueue" endpointConfigName="TextEncodedMessageBody">
+        <queueInPort>
+          <queueHasQueueInPort Id="13a7de5b-2eb0-4a77-a0ff-cc270821e020">
+            <queueInPort Id="88cf1f08-f266-4038-8120-cadd3e5f8acf" name="QueueInPort" />
+          </queueHasQueueInPort>
+        </queueInPort>
+      </queue>
+    </bridgeConfigurationModelHasEntities>
+    <bridgeConfigurationModelHasEntities Id="676ed389-19d9-462b-9610-a390e4ceb10a">
+      <oneWayBridge Id="43a26fa2-97b2-4915-b439-e65e97bd406d" entityName="FireAlertBridge" address="FireAlertBridge" pipelineTemplateName="oneWayXmlPipeline" trackingOptions="" displayName="Xml One-Way Bridge">
+        <oneWayBridgeInPort>
+          <oneWayBridgeHasOneWayBridgeInPort Id="87db2b69-5fd2-4b9d-bf4d-246768949ffa">
+            <oneWayBridgeInPort Id="51e78ebb-6878-46e0-bfce-ea28fb3359a0" name="OneWayBridgeInPort" />
+          </oneWayBridgeHasOneWayBridgeInPort>
+        </oneWayBridgeInPort>
+        <oneWayRoutePort>
+          <oneWayBridgeHasOneWayRoutePort Id="2ccd0a25-612f-485b-980b-cc26f73f66b6">
+            <oneWayRoutePort Id="b5f95950-adac-4d0a-894f-787b48c92189" name="OneWayRoutePort">
+              <pushInPorts>
+                <oneWayRouteConnection Id="51619ba5-88ab-4f27-a30b-f8270be5b1bd" filterCondition="1=1">
+                  <queueInPortMoniker Id="da9f94fd-1fb5-43be-9b6c-c22b09ffad4e" />
+                  <routeAction />
+                </oneWayRouteConnection>
+              </pushInPorts>
+            </oneWayRoutePort>
+          </oneWayBridgeHasOneWayRoutePort>
+        </oneWayRoutePort>
+      </oneWayBridge>
+    </bridgeConfigurationModelHasEntities>
+  </entities>
+</bridgeConfiguration>

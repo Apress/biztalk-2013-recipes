@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bridgeConfigurationDiagram dslVersion="1.0.0.0" Id="4805de0e-3e0b-44ba-9c9d-89a7f1effbb2" absoluteBounds="0, 0, 11, 8.5" name="MessageFlowItinerary">
+  <bridgeConfigurationMoniker Id="b3f8ef14-9162-47ea-a4d3-9c74d1745e32" />
+  <nestedChildShapes>
+    <oneWayBridgeShape Id="7e103868-f721-4907-8ddd-b56fa90f2d96" absoluteBounds="2.75, 1.75, 1.1, 0.9" fillColor="White">
+      <oneWayBridgeMoniker Id="67b07296-4a4e-41e3-885b-160f6fcc4f6c" />
+      <relativeChildShapes>
+        <inPortShape Id="a36334fb-6619-49a0-9598-275402b0cb55" absoluteBounds="2.7, 2.15, 0.1, 0.1" fillColor="Transparent">
+          <oneWayBridgeInPortMoniker Id="239797f7-97e7-4bb4-8a39-2135673c01ed" />
+        </inPortShape>
+        <outPortShape Id="6a903739-6e6b-467f-88b3-33b7c5bf114d" absoluteBounds="3.8, 2.15, 0.1, 0.1" fillColor="Transparent">
+          <oneWayRoutePortMoniker Id="4bb0c082-892d-47db-aa4d-7f79b4c076b4" />
+        </outPortShape>
+      </relativeChildShapes>
+    </oneWayBridgeShape>
+    <queueShape Id="594eaddb-2c89-4605-91bb-654920022ea7" absoluteBounds="8, 0.75, 1.1, 0.9" fillColor="White">
+      <queueMoniker Id="751fd05f-443e-4847-ad6f-761f358d4cc6" />
+      <relativeChildShapes>
+        <inPortShape Id="93aa11b8-feb2-4558-9150-f1ccbfdddb13" absoluteBounds="7.95, 1.15, 0.1, 0.1" fillColor="Transparent">
+          <queueInPortMoniker Id="da9f94fd-1fb5-43be-9b6c-c22b09ffad4e" />
+        </inPortShape>
+      </relativeChildShapes>
+    </queueShape>
+    <topicShape Id="0fa8d1f9-0789-4d87-9b3d-c57be4c004a5" absoluteBounds="7.125, 2.875, 1.1, 0.9" fillColor="White">
+      <topicMoniker Id="35877613-b6eb-4c63-b3cf-0f6d09b21b2d" />
+      <relativeChildShapes>
+        <inPortShape Id="59d83736-1e84-4406-9e9a-6d796bbc3555" absoluteBounds="7.075, 3.275, 0.1, 0.1" fillColor="Transparent">
+          <topicInPortMoniker Id="8ac897ba-a141-4243-8343-1973ca9d0d1f" />
+        </inPortShape>
+      </relativeChildShapes>
+    </topicShape>
+    <oneWayRouteConnector Id="d7db92ea-bc1f-4c27-857e-ccf435b44b7a" edgePoints="[(3.9 : 2.2); (4.72291666666667 : 2.2); (4.72291666666667 : 3.325); (7.075 : 3.325)]" manuallyRouted="true" fixedFrom="Caller" fixedTo="Caller" color="ControlDarkDark">
+      <oneWayRouteConnectionMoniker Id="b4216f04-ef91-42e3-bbaf-6d30026bb443" />
+      <nodes>
+        <outPortShapeMoniker Id="6a903739-6e6b-467f-88b3-33b7c5bf114d" />
+        <inPortShapeMoniker Id="59d83736-1e84-4406-9e9a-6d796bbc3555" />
+      </nodes>
+    </oneWayRouteConnector>
+    <queueShape Id="4ed8f0f6-29aa-4f12-beba-6e13de402ae5" absoluteBounds="7, 4.75, 1.1, 0.9" fillColor="White">
+      <queueMoniker Id="1670212d-fdd8-4d07-84f4-c05113035507" />
+      <relativeChildShapes>
+        <inPortShape Id="a75cf8fb-6164-4d64-9763-183150b68c8b" absoluteBounds="6.95, 5.15, 0.1, 0.1" fillColor="Transparent">
+          <queueInPortMoniker Id="88cf1f08-f266-4038-8120-cadd3e5f8acf" />
+        </inPortShape>
+      </relativeChildShapes>
+    </queueShape>
+    <oneWayRouteConnector Id="f19cfc88-6200-4e85-9f64-8bb104e1ff9a" edgePoints="[(3.9 : 2.2); (4.65 : 2.2); (4.65 : 5.2); (6.95 : 5.2)]" manuallyRouted="true" fixedFrom="Caller" fixedTo="Caller" color="ControlDarkDark">
+      <oneWayRouteConnectionMoniker Id="4308ff33-c211-4aa7-8d80-59fde4c6edf4" />
+      <nodes>
+        <outPortShapeMoniker Id="6a903739-6e6b-467f-88b3-33b7c5bf114d" />
+        <inPortShapeMoniker Id="a75cf8fb-6164-4d64-9763-183150b68c8b" />
+      </nodes>
+    </oneWayRouteConnector>
+    <oneWayBridgeShape Id="26680a7e-822a-4d96-9bdb-c1a7a8de7994" absoluteBounds="5.5, 0.75, 1.1, 0.9" fillColor="White">
+      <oneWayBridgeMoniker Id="43a26fa2-97b2-4915-b439-e65e97bd406d" />
+      <relativeChildShapes>
+        <inPortShape Id="d8de2b97-a59f-492d-a934-4a98e90dd442" absoluteBounds="5.45, 1.15, 0.1, 0.1" fillColor="Transparent">
+          <oneWayBridgeInPortMoniker Id="51e78ebb-6878-46e0-bfce-ea28fb3359a0" />
+        </inPortShape>
+        <outPortShape Id="6f317cfa-04a1-4c3d-895c-e01db51de981" absoluteBounds="6.55, 1.15, 0.1, 0.1" fillColor="Transparent">
+          <oneWayRoutePortMoniker Id="b5f95950-adac-4d0a-894f-787b48c92189" />
+        </outPortShape>
+      </relativeChildShapes>
+    </oneWayBridgeShape>
+    <oneWayRouteConnector Id="c3eb4130-54dd-4fbb-9e04-faf27d97d083" edgePoints="[(3.9 : 2.2); (4.66041666666667 : 2.2); (4.66041666666667 : 1.2); (5.45 : 1.2)]" manuallyRouted="true" fixedFrom="Caller" fixedTo="Caller" color="ControlDarkDark">
+      <oneWayRouteConnectionMoniker Id="8964c883-6015-476c-9687-7ded9cf9efc9" />
+      <nodes>
+        <outPortShapeMoniker Id="6a903739-6e6b-467f-88b3-33b7c5bf114d" />
+        <inPortShapeMoniker Id="d8de2b97-a59f-492d-a934-4a98e90dd442" />
+      </nodes>
+    </oneWayRouteConnector>
+    <oneWayRouteConnector Id="e84639ac-2364-4b07-9829-09a4db07d426" edgePoints="[(6.65 : 1.2); (7.95 : 1.2)]" fixedFrom="Caller" fixedTo="Caller" color="ControlDarkDark">
+      <oneWayRouteConnectionMoniker Id="51619ba5-88ab-4f27-a30b-f8270be5b1bd" />
+      <nodes>
+        <outPortShapeMoniker Id="6f317cfa-04a1-4c3d-895c-e01db51de981" />
+        <inPortShapeMoniker Id="93aa11b8-feb2-4558-9150-f1ccbfdddb13" />
+      </nodes>
+    </oneWayRouteConnector>
+  </nestedChildShapes>
+</bridgeConfigurationDiagram>

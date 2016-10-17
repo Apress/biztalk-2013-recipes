@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?><entry xmlns="http://www.w3.org/2005/Atom"><id>uuid:1561092a-697b-47b6-89af-5339cadb8479;id=6</id><title type="text">Invoice.xsd</title><updated>2013-10-31T02:48:26Z</updated><link rel="self" href="Invoice.xsd" /><content type="application/xml"><Artifact xmlns="http://schemas.microsoft.com/integration"><xs:schema xmlns="http://InvoiceMgmtServices.Invoice" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" targetNamespace="http://InvoiceMgmtServices.Invoice" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Invoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Client">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FirstName" type="xs:string" />
+              <xs:element name="LastName" type="xs:string" />
+              <xs:element name="Street" type="xs:string" />
+              <xs:element name="City" type="xs:string" />
+              <xs:element name="State" type="xs:string" />
+              <xs:element name="ZipCode" type="xs:string" />
+              <xs:element minOccurs="1" maxOccurs="1" name="Order">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Notes" type="xs:string" />
+                    <xs:element name="TotalAmount" type="xs:decimal" />
+                    <xs:element minOccurs="1" maxOccurs="1" name="OrderItems">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="1" maxOccurs="unbounded" name="OrderItem">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ProductName" type="xs:string" />
+                                <xs:element name="ProductID" type="xs:string" />
+                                <xs:element name="Quantity" type="xs:string" />
+                                <xs:element name="Price" type="xs:string" />
+                                <xs:element name="Notes" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element minOccurs="1" maxOccurs="1" name="Payments">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="1" maxOccurs="unbounded" name="Payment">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Amount" type="xs:decimal" />
+                                <xs:element name="Method" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema></Artifact></content></entry>

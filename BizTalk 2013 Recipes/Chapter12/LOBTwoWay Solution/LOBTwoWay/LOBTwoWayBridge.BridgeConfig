@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlBridgeConfiguration xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/WindowsAzureServiceBus/Bridge">
+  <XmlBridge i:type="XmlRequestReplyBridge">
+    <RequestPostTrfmEnrichStage>
+      <IsEnabled>true</IsEnabled>
+      <OnEnterInspector i:nil="true" />
+      <OnExitInspector i:nil="true" />
+      <XmlEnrich>
+        <Properties />
+      </XmlEnrich>
+    </RequestPostTrfmEnrichStage>
+    <RequestPreTrfmEnrichStage>
+      <IsEnabled>true</IsEnabled>
+      <OnEnterInspector i:nil="true" />
+      <OnExitInspector i:nil="true" />
+      <XmlEnrich>
+        <Properties />
+      </XmlEnrich>
+    </RequestPreTrfmEnrichStage>
+    <TransformStage>
+      <IsEnabled>true</IsEnabled>
+      <OnEnterInspector i:nil="true" />
+      <OnExitInspector i:nil="true" />
+      <XmlTransform>
+        <SelectedMaps xmlns:d5p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+          <d5p1:string>GetOrdersReq_To_LOBReq.trfm</d5p1:string>
+        </SelectedMaps>
+      </XmlTransform>
+    </TransformStage>
+    <ValidateStage>
+      <IsEnabled>true</IsEnabled>
+      <OnEnterInspector i:nil="true" />
+      <OnExitInspector i:nil="true" />
+      <XmlValidate>
+        <WarningsAsErrors>false</WarningsAsErrors>
+      </XmlValidate>
+    </ValidateStage>
+    <MessageTypeMappings>
+      <MessageTypeMapping>
+        <IncomingMessageType>
+          <FilePath>GetOrdersRequest.xsd</FilePath>
+          <RootNodeName>GetOrdersRequest</RootNodeName>
+          <SchemaNamespace>http://RelayReceipe.GetOrdersRequest</SchemaNamespace>
+        </IncomingMessageType>
+        <ResponseMessageType>
+          <FilePath>GetOrderResponse.xsd</FilePath>
+          <RootNodeName>GetOrdersResponse</RootNodeName>
+          <SchemaNamespace>http://RelayReceipe.GetOrderResponse</SchemaNamespace>
+        </ResponseMessageType>
+      </MessageTypeMapping>
+    </MessageTypeMappings>
+    <ResponsePostTrfmEnrichStage>
+      <IsEnabled>true</IsEnabled>
+      <OnEnterInspector i:nil="true" />
+      <OnExitInspector i:nil="true" />
+      <XmlEnrich>
+        <Properties />
+      </XmlEnrich>
+    </ResponsePostTrfmEnrichStage>
+    <ResponsePreTrfmEnrichStage>
+      <IsEnabled>true</IsEnabled>
+      <OnEnterInspector i:nil="true" />
+      <OnExitInspector i:nil="true" />
+      <XmlEnrich>
+        <Properties />
+      </XmlEnrich>
+    </ResponsePreTrfmEnrichStage>
+    <ResponseTransformStage>
+      <IsEnabled>true</IsEnabled>
+      <OnEnterInspector i:nil="true" />
+      <OnExitInspector i:nil="true" />
+      <XmlTransform>
+        <SelectedMaps xmlns:d5p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+          <d5p1:string>LOBRes_To_GetOrdersRes.trfm</d5p1:string>
+        </SelectedMaps>
+      </XmlTransform>
+    </ResponseTransformStage>
+    <SendStage>
+      <IsEnabled>true</IsEnabled>
+      <Send>
+        <Properties />
+      </Send>
+    </SendStage>
+  </XmlBridge>
+</XmlBridgeConfiguration>

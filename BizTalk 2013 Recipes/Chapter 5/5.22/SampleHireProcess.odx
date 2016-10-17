@@ -1,0 +1,184 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="00adbd3f-f249-42f3-b1cd-496854d0a0d9" LowerBound="1.1" HigherBound="44.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Sample_Role_Link_Recipe" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="db7de40a-1a76-43fb-895a-db508ce3453b" ParentLink="Module_ServiceDeclaration" LowerBound="25.1" HigherBound="43.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SampleHireProcess" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="ServiceLinkDeclaration" OID="0dcfbd15-6a57-41e5-b3ca-08c1ed73d0d7" ParentLink="ServiceDeclaration_ServiceLinkDeclaration" LowerBound="28.1" HigherBound="29.1">
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="RoleName" Value="Consumer" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Sample_Role_Link_Recipe.NewHireApprovalType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="NewHireApproval" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="5b5d40fd-a348-4ab3-934a-c2f4f8b21e2e" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="31.1" HigherBound="32.1">
+                <om:Property Name="Type" Value="Sample_Role_Link_Recipe.SampleNewHireRequest" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgNewHire" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="ca13f0c7-2a1d-4952-b3d0-5848a41bdeb8" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="2b60af9f-2ecb-426a-9a7c-47656a173a4f" ParentLink="ServiceBody_Statement" LowerBound="34.1" HigherBound="36.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveNewHireRequest" />
+                    <om:Property Name="MessageName" Value="msgNewHire" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ReceiveRequest" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="1f68985e-f859-4585-8775-47a07ad4ed3a" ParentLink="ServiceBody_Statement" LowerBound="36.1" HigherBound="39.1">
+                    <om:Property Name="Expression" Value="//set the approver name&#xD;&#xA;NewHireApproval(Microsoft.XLANGs.BaseTypes.DestinationParty) = new Microsoft.XLANGs.BaseTypes.Party(msgNewHire.Approver, &quot;OrganizationName&quot;);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="InitializeRoleLinks" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="Send" OID="c93d0d4c-55a6-41ae-a94b-2741bc5cb7c5" ParentLink="ServiceBody_Statement" LowerBound="39.1" HigherBound="41.1">
+                    <om:Property Name="MessageName" Value="msgNewHire" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ServiceLinkName" Value="NewHireApproval" />
+                    <om:Property Name="ServiceLinkPortTypeName" Value="Sample_Role_Link_Recipe.SendPortType" />
+                    <om:Property Name="ServiceLinkRoleName" Value="Consumer" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="SendRequest" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="f1c4ec59-290b-4741-bc84-985b30a25c2e" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="29.1" HigherBound="31.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Sample_Role_Link_Recipe.ReceiveNewHireRequestType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveNewHireRequest" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="19c8b424-7783-488b-a7e2-ed861bfcecfc" ParentLink="PortDeclaration_CLRAttribute" LowerBound="29.1" HigherBound="30.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="738a4c60-0063-4c3b-91db-876dec5e7810" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReceiveNewHireRequestType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="a194ea19-9c5e-4013-bd02-872afd21f2fb" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="d5994ce4-6f2c-4991-98bd-03251171211d" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.33">
+                    <om:Property Name="Ref" Value="Sample_Role_Link_Recipe.SampleNewHireRequest" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="0c2065c6-a5be-4143-abbc-c0a5a4ddcf03" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SendPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="d630da51-d565-4415-982a-1778a1248882" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="90026aa5-8979-4949-b9e6-db748c96f643" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.33">
+                    <om:Property Name="Ref" Value="Sample_Role_Link_Recipe.SampleNewHireRequest" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceLinkType" OID="62652536-0f7f-408e-ae39-d0b19d2b24e8" ParentLink="Module_ServiceLinkType" LowerBound="18.1" HigherBound="25.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="NewHireApprovalType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="RoleDeclaration" OID="213b623a-73be-4290-b53b-1fd4023db13f" ParentLink="ServiceLinkType_RoleDeclaration" LowerBound="20.1" HigherBound="24.1">
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Consumer" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="PortTypeRef" OID="05a1baf6-81f2-421a-881a-3857a1170489" ParentLink="RoleDeclaration_PortTypeRef" LowerBound="22.13" HigherBound="22.25">
+                    <om:Property Name="Ref" Value="Sample_Role_Link_Recipe.SendPortType" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="PortTypeRef_1" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Sample_Role_Link_Recipe
+{
+    internal porttype ReceiveNewHireRequestType
+    {
+        oneway Operation_1
+        {
+            SampleNewHireRequest
+        };
+    };
+    public porttype SendPortType
+    {
+        oneway Operation_1
+        {
+            SampleNewHireRequest
+        };
+    };
+    internal servicelinktype NewHireApprovalType
+    {
+        Consumer
+        {
+            SendPortType
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service SampleHireProcess
+    {
+        servicelink uses NewHireApprovalType.Consumer NewHireApproval;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements ReceiveNewHireRequestType ReceiveNewHireRequest;
+        message SampleNewHireRequest msgNewHire;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("2b60af9f-2ecb-426a-9a7c-47656a173a4f")]
+            activate receive (ReceiveNewHireRequest.Operation_1, msgNewHire);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("1f68985e-f859-4585-8775-47a07ad4ed3a")]
+            //set the approver name
+            NewHireApproval(Microsoft.XLANGs.BaseTypes.DestinationParty) = new Microsoft.XLANGs.BaseTypes.Party(msgNewHire.Approver, "OrganizationName");
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("c93d0d4c-55a6-41ae-a94b-2741bc5cb7c5")]
+            send (NewHireApproval[Sample_Role_Link_Recipe.SendPortType].Operation_1, msgNewHire);
+        }
+    }
+}
+

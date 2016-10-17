@@ -1,0 +1,132 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="8eb321d4-7a37-4b58-837c-546655fad415" LowerBound="1.1" HigherBound="49.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Scopes" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="22c3aa3e-b4a4-4bbd-90d2-bbd5ebfcac65" ParentLink="Module_ServiceDeclaration" LowerBound="4.1" HigherBound="48.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SimpleScope" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="VariableDeclaration" OID="6c2aecee-6714-4f75-827b-60b3379281b2" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="7.1" HigherBound="8.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="intZero" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="66a7ed19-85b1-434f-b14c-bc344be33aff" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Scope" OID="703e0e77-9df9-4e58-bce4-4d7638eeca84" ParentLink="ServiceBody_Statement" LowerBound="10.1" HigherBound="46.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Controlled Exception Scope" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Scope" OID="89ea1268-f6af-464c-b054-fbb69b8201aa" ParentLink="ComplexStatement_Statement" LowerBound="15.1" HigherBound="35.1">
+                        <om:Property Name="InitializedTransactionType" Value="True" />
+                        <om:Property Name="IsSynchronized" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Interior Scope" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="VariableAssignment" OID="cdbaf2f5-b729-4dc6-918c-2952e5aabebf" ParentLink="ComplexStatement_Statement" LowerBound="20.1" HigherBound="22.1">
+                            <om:Property Name="Expression" Value="intZero = intZero / intZero;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Divide By Zero" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Catch" OID="61086368-ecb1-4444-bcd7-826fbe677272" ParentLink="Scope_Catch" LowerBound="25.1" HigherBound="33.1">
+                            <om:Property Name="ExceptionName" Value="ex" />
+                            <om:Property Name="ExceptionType" Value="System.ArithmeticException" />
+                            <om:Property Name="IsFaultMessage" Value="False" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Handle Arithmetic Exception" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Exec" OID="0d7eb554-82da-4760-b1fc-7efe4f2f1d18" ParentLink="Catch_Statement" LowerBound="28.1" HigherBound="30.1">
+                                <om:Property Name="Invokee" Value="Scopes.SimpleScope" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Call Math Error" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="Throw" OID="2eab2bfa-ff48-4caa-b816-13aa18042ec3" ParentLink="Catch_Statement" LowerBound="30.1" HigherBound="32.1">
+                                <om:Property Name="ThrownReference" Value="General Exception" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="ThrowException to Log" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Catch" OID="b734be93-0733-4b8b-b988-cdb4b52b04c1" ParentLink="Scope_Catch" LowerBound="38.1" HigherBound="44.1">
+                        <om:Property Name="ExceptionType" Value="General Exception" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Log Exception" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="VariableAssignment" OID="327818b6-f490-487d-b578-924c33e54632" ParentLink="Catch_Statement" LowerBound="41.1" HigherBound="43.1">
+                            <om:Property Name="Expression" Value="System.Diagnostics.EventLog.WriteEntry(&quot;A Simple BizTalk Source&quot;,&quot;An exception was encountered in my sample orchestration.  &quot;);&#xD;&#xA;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Event Log Entry" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Scopes
+{
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service SimpleScope
+    {
+        System.Int32 intZero;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("703e0e77-9df9-4e58-bce4-4d7638eeca84")]
+            scope
+            {
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("89ea1268-f6af-464c-b054-fbb69b8201aa")]
+                    scope
+                    {
+                        body
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("cdbaf2f5-b729-4dc6-918c-2952e5aabebf")]
+                            intZero = intZero / intZero;
+                        }
+                        exceptions
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("61086368-ecb1-4444-bcd7-826fbe677272")]
+                            catch (System.ArithmeticException ex)
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("0d7eb554-82da-4760-b1fc-7efe4f2f1d18")]
+                                exec Scopes.SimpleScope ();
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("2eab2bfa-ff48-4caa-b816-13aa18042ec3")]
+                                throw;
+                            }
+                        }
+                    }
+                }
+                exceptions
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("b734be93-0733-4b8b-b988-cdb4b52b04c1")]
+                    catch
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("327818b6-f490-487d-b578-924c33e54632")]
+                        System.Diagnostics.EventLog.WriteEntry("A Simple BizTalk Source","An exception was encountered in my sample orchestration.  ");
+                    }
+                }
+            }
+        }
+    }
+}
+

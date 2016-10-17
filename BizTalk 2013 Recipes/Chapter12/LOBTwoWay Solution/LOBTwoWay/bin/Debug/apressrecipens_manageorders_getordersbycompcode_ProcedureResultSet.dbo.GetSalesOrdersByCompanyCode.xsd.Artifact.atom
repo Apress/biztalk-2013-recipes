@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?><entry xmlns="http://www.w3.org/2005/Atom"><id>uuid:01b2d178-40a9-4d68-93d6-fa18ac98e6a6;id=12</id><title type="text">LOB Schemas/apressrecipens_manageorders_getordersbycompcode_ProcedureResultSet.dbo.GetSalesOrdersByCompanyCode.xsd</title><updated>2013-10-25T21:10:15Z</updated><link rel="self" href="LOB Schemas/apressrecipens_manageorders_getordersbycompcode_ProcedureResultSet.dbo.GetSalesOrdersByCompanyCode.xsd" /><content type="application/xml"><Artifact xmlns="http://schemas.microsoft.com/integration"><xs:schema xmlns:ns3="http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/dbo/GetSalesOrdersByCompanyCode" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/dbo/GetSalesOrdersByCompanyCode" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:appinfo>
+      <fileNameHint xmlns="http://schemas.microsoft.com/servicemodel/adapters/metadata/xsd">ProcedureResultSet.dbo.GetSalesOrdersByCompanyCode</fileNameHint>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:complexType name="StoredProcedureResultSet0">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SalesOrderID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PartNum" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DateRequested" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CompanyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Qty" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitAskPrice" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ShipDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SellToAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BillToAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PartnerContact" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CustomerComments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RFQStatuesId" nillable="true" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StoredProcedureResultSet0" nillable="true" type="ns3:StoredProcedureResultSet0" />
+  <xs:complexType name="ArrayOfStoredProcedureResultSet0">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StoredProcedureResultSet0" type="ns3:StoredProcedureResultSet0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStoredProcedureResultSet0" nillable="true" type="ns3:ArrayOfStoredProcedureResultSet0" />
+</xs:schema></Artifact></content></entry>

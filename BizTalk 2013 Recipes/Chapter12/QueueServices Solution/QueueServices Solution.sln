@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueueSender", "QueueSender\QueueSender.btproj", "{4D373031-0DD3-4224-976C-CCD613FABC23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueueReceiver", "QueueReceiver\QueueReceiver.btproj", "{1F2B10F8-B478-46E1-8101-0A3C38E51918}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrokeredMessages", "BrokeredMessages\BrokeredMessages.btproj", "{BAD52696-4818-4A18-877F-9253AFB6BD15}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D373031-0DD3-4224-976C-CCD613FABC23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D373031-0DD3-4224-976C-CCD613FABC23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D373031-0DD3-4224-976C-CCD613FABC23}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4D373031-0DD3-4224-976C-CCD613FABC23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D373031-0DD3-4224-976C-CCD613FABC23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D373031-0DD3-4224-976C-CCD613FABC23}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{1F2B10F8-B478-46E1-8101-0A3C38E51918}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F2B10F8-B478-46E1-8101-0A3C38E51918}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F2B10F8-B478-46E1-8101-0A3C38E51918}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{1F2B10F8-B478-46E1-8101-0A3C38E51918}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F2B10F8-B478-46E1-8101-0A3C38E51918}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F2B10F8-B478-46E1-8101-0A3C38E51918}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{BAD52696-4818-4A18-877F-9253AFB6BD15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAD52696-4818-4A18-877F-9253AFB6BD15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAD52696-4818-4A18-877F-9253AFB6BD15}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BAD52696-4818-4A18-877F-9253AFB6BD15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAD52696-4818-4A18-877F-9253AFB6BD15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAD52696-4818-4A18-877F-9253AFB6BD15}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

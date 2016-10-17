@@ -1,0 +1,4 @@
+ORDER2004-10-24
+SoldTo Shauna Marie    1223 Buttercup Lane Seattle       WA 98155
+ShipTo Jen Schwinn     3030 Moby Road      Kent          WA 98110
+ITEMS,ITEM111-AA|Grape|1|2.00|Bottle of Pop,ITEM111-AB|Cola|1|2.00|Bottle of Pop

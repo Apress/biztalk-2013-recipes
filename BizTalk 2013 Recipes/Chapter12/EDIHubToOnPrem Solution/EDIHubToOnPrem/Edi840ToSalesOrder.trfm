@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MapFile xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:a1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns="http://schemas.microsoft.com/2011/07/AppServer/Transforms">
+  <GridHeight>200</GridHeight>
+  <GridWidth>200</GridWidth>
+  <MainMapletName>Page 1</MainMapletName>
+  <MapFileSettings i:nil="true" />
+  <Maplets>
+    <Maplet>
+      <SerializedProperties>
+        <a1:KeyValueOfstringanyType>
+          <a1:Key>Pages</a1:Key>
+          <a1:Value i:type="a1:ArrayOfstring">
+            <a1:string>Page 1</a1:string>
+          </a1:Value>
+        </a1:KeyValueOfstringanyType>
+      </SerializedProperties>
+      <Statements>
+        <MapStatement i:type="OptionalSourceAssignment">
+          <SerializedProperties>
+            <a1:KeyValueOfstringanyType>
+              <a1:Key>Page</a1:Key>
+              <a1:Value i:type="xs:string">Page 1</a1:Value>
+            </a1:KeyValueOfstringanyType>
+            <a1:KeyValueOfstringanyType>
+              <a1:Key>Id</a1:Key>
+              <a1:Value i:type="xs:int">4</a1:Value>
+            </a1:KeyValueOfstringanyType>
+          </SerializedProperties>
+          <From i:type="PathExpression">
+            <Path>srcRoot1/ns0:PID/PID02</Path>
+          </From>
+          <To>
+            <Path>tgtRoot1/PartID</Path>
+          </To>
+        </MapStatement>
+        <MapStatement i:type="OptionalSourceAssignment">
+          <SerializedProperties>
+            <a1:KeyValueOfstringanyType>
+              <a1:Key>Page</a1:Key>
+              <a1:Value i:type="xs:string">Page 1</a1:Value>
+            </a1:KeyValueOfstringanyType>
+            <a1:KeyValueOfstringanyType>
+              <a1:Key>Id</a1:Key>
+              <a1:Value i:type="xs:int">5</a1:Value>
+            </a1:KeyValueOfstringanyType>
+          </SerializedProperties>
+          <From i:type="PathExpression">
+            <Path>srcRoot1/ns0:TD1/TD102</Path>
+          </From>
+          <To>
+            <Path>tgtRoot1/Quantity</Path>
+          </To>
+        </MapStatement>
+        <MapStatement i:type="OptionalSourceAssignment">
+          <SerializedProperties>
+            <a1:KeyValueOfstringanyType>
+              <a1:Key>Page</a1:Key>
+              <a1:Value i:type="xs:string">Page 1</a1:Value>
+            </a1:KeyValueOfstringanyType>
+            <a1:KeyValueOfstringanyType>
+              <a1:Key>Id</a1:Key>
+              <a1:Value i:type="xs:int">6</a1:Value>
+            </a1:KeyValueOfstringanyType>
+          </SerializedProperties>
+          <From i:type="PathExpression">
+            <Path>srcRoot1/ns0:CTP/CTP10</Path>
+          </From>
+          <To>
+            <Path>tgtRoot1/AskPrice</Path>
+          </To>
+        </MapStatement>
+        <MapStatement i:type="OptionalSourceAssignment">
+          <SerializedProperties>
+            <a1:KeyValueOfstringanyType>
+              <a1:Key>Page</a1:Key>
+              <a1:Value i:type="xs:string">Page 1</a1:Value>
+            </a1:KeyValueOfstringanyType>
+            <a1:KeyValueOfstringanyType>
+              <a1:Key>Id</a1:Key>
+              <a1:Value i:type="xs:int">2</a1:Value>
+            </a1:KeyValueOfstringanyType>
+          </SerializedProperties>
+          <From i:type="PathExpression">
+            <Path>srcRoot1/ns0:BQT/BQT05</Path>
+          </From>
+          <To>
+            <Path>tgtRoot1/RequestShipmentDate</Path>
+          </To>
+        </MapStatement>
+        <MapStatement i:type="OptionalSourceAssignment">
+          <SerializedProperties>
+            <a1:KeyValueOfstringanyType>
+              <a1:Key>Page</a1:Key>
+              <a1:Value i:type="xs:string">Page 1</a1:Value>
+            </a1:KeyValueOfstringanyType>
+            <a1:KeyValueOfstringanyType>
+              <a1:Key>Id</a1:Key>
+              <a1:Value i:type="xs:int">3</a1:Value>
+            </a1:KeyValueOfstringanyType>
+          </SerializedProperties>
+          <From i:type="PathExpression">
+            <Path>srcRoot1/ns0:PER/PER02</Path>
+          </From>
+          <To>
+            <Path>tgtRoot1/Contact/Firstname</Path>
+          </To>
+        </MapStatement>
+        <MapStatement i:type="Assignment">
+          <SerializedProperties>
+            <a1:KeyValueOfstringanyType>
+              <a1:Key>Page</a1:Key>
+              <a1:Value i:type="xs:string">Page 1</a1:Value>
+            </a1:KeyValueOfstringanyType>
+            <a1:KeyValueOfstringanyType>
+              <a1:Key>Id</a1:Key>
+              <a1:Value i:type="xs:int">1</a1:Value>
+            </a1:KeyValueOfstringanyType>
+          </SerializedProperties>
+          <From i:type="PathExpression">
+            <Path>srcRoot1/ns0:BQT/BQT03</Path>
+          </From>
+          <To>
+            <Path>tgtRoot1/DateNow</Path>
+          </To>
+        </MapStatement>
+      </Statements>
+      <Name>Page 1</Name>
+      <ReferencedAssemblies />
+      <Scripts />
+      <SourceParameters>
+        <ParameterInfo>
+          <Name>srcRoot1</Name>
+          <PropertiesInfo i:nil="true" />
+          <Type i:type="XmlEntityType">
+            <LocalName>X12_00401_840</LocalName>
+            <NamespaceName>http://schemas.microsoft.com/BizTalk/EDI/X12/2006</NamespaceName>
+            <SchemaLocation>.\X12_00401_840.xsd</SchemaLocation>
+          </Type>
+        </ParameterInfo>
+      </SourceParameters>
+      <TargetParameters>
+        <ParameterInfo>
+          <Name>tgtRoot1</Name>
+          <PropertiesInfo i:nil="true" />
+          <Type i:type="XmlEntityType">
+            <LocalName>SalesOrder</LocalName>
+            <NamespaceName>http://ECommerceSalesOrder.Inbound</NamespaceName>
+            <SchemaLocation>.\ECommerceSalesOrder.xsd</SchemaLocation>
+          </Type>
+        </ParameterInfo>
+      </TargetParameters>
+      <XmlNamespacePrefixMap />
+    </Maplet>
+  </Maplets>
+  <Version>.82</Version>
+  <XmlNamespacePrefixMap>
+    <a1:KeyValueOfstringstring>
+      <a1:Key>ns0</a1:Key>
+      <a1:Value>http://schemas.microsoft.com/BizTalk/EDI/X12/2006</a1:Value>
+    </a1:KeyValueOfstringstring>
+    <a1:KeyValueOfstringstring>
+      <a1:Key>ns1</a1:Key>
+      <a1:Value>http://ECommerceSalesOrder.Inbound</a1:Value>
+    </a1:KeyValueOfstringstring>
+  </XmlNamespacePrefixMap>
+</MapFile>

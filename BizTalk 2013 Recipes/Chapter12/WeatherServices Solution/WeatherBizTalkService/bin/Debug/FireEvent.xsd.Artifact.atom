@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?><entry xmlns="http://www.w3.org/2005/Atom"><id>uuid:742db31f-eba1-4f92-8429-c4330e0860f7;id=4</id><title type="text">FireEvent.xsd</title><updated>2013-10-30T17:12:57Z</updated><link rel="self" href="FireEvent.xsd" /><content type="application/xml"><Artifact xmlns="http://schemas.microsoft.com/integration"><xs:schema xmlns="http://EventConsumerProj.FireEvent" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" targetNamespace="http://EventConsumerProj.FireEvent" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="FireEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="AlertType" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="AlertColor" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="Temperature" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="AlertMessage" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema></Artifact></content></entry>

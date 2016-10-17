@@ -1,0 +1,556 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="5056b3dd-aa00-469a-8cf6-5b97f34c195d" LowerBound="1.1" HigherBound="127.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="SAMPLEMainBusinessFlow" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="cc489269-3d50-420d-9af0-ddc37203cd39" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_ReceiveIncoming" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="c21efcc4-6f78-43a4-b303-d6fb72b01e31" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="f60439f3-5b48-443c-9f31-e8c273417264" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.26">
+                    <om:Property Name="Ref" Value="SAMPLEMainBusinessFlow.SAMPLEKickOff" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="cfa27f81-155d-4bcb-bfb2-a6d4217ca806" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_SendOutput" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="0101a5ed-c5ba-411f-8d14-fb884239f11a" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="3497cf74-ac01-47c9-b005-c5ae078bf912" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.57">
+                    <om:Property Name="Ref" Value="CommonSchemas.ExceptionHandlerBufferResponse" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="6fe0ffb4-bf77-4adf-80ad-8c5df92a6a94" ParentLink="Module_PortType" LowerBound="18.1" HigherBound="25.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_CallTaskProcess" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="d6891f74-f40f-4aa5-8f1b-a2df631a283c" ParentLink="PortType_OperationDeclaration" LowerBound="20.1" HigherBound="24.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="6b003088-fd8d-44a7-9e48-882039db3870" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.53">
+                    <om:Property Name="Ref" Value="CommonSchemas.ExceptionHandlerBufferCall" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="0945d175-50f4-4446-b6cb-f513fe210e91" ParentLink="Module_PortType" LowerBound="25.1" HigherBound="32.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_ReceiveTaskProcess" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="801a4b60-e0b8-4814-89ba-ec12a4e2dae2" ParentLink="PortType_OperationDeclaration" LowerBound="27.1" HigherBound="31.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="c107b51b-a6d5-4b69-ba41-a4095e801543" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="29.13" HigherBound="29.57">
+                    <om:Property Name="Ref" Value="CommonSchemas.ExceptionHandlerBufferResponse" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="CorrelationType" OID="b6876e63-8a89-453b-8c16-af1d3f201ce5" ParentLink="Module_CorrelationType" LowerBound="32.1" HigherBound="36.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="CorrelationType_ID" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PropertyRef" OID="4e76c3ef-b0ea-4ade-aa13-b4c7ff0a286c" ParentLink="CorrelationType_PropertyRef" LowerBound="34.9" HigherBound="34.51">
+                <om:Property Name="Ref" Value="CommonSchemas.PropertySchema.CorrelationID" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PropertyRef_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="b862b1ab-553a-44de-a624-3c5b6c9f07ff" ParentLink="Module_ServiceDeclaration" LowerBound="36.1" HigherBound="126.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SAMPLEMainFlow" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="VariableDeclaration" OID="370b4fc3-2482-4b6d-8137-65df05715cb1" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="51.1" HigherBound="52.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xmlDoc" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="871122a6-f1f5-4c88-96e0-f2628c762e29" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="52.1" HigherBound="53.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strCorrelation" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="CorrelationDeclaration" OID="c298f51d-b733-487a-9eba-e0e0949360b9" ParentLink="ServiceDeclaration_CorrelationDeclaration" LowerBound="47.1" HigherBound="48.1">
+                <om:Property Name="Type" Value="SAMPLEMainBusinessFlow.CorrelationType_ID" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Correlation_MainFlow" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="StatementRef" OID="76b16e8c-3e12-48a9-9f41-f4c261e8dd79" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="89.69" HigherBound="89.100">
+                    <om:Property Name="Initializes" Value="True" />
+                    <om:Property Name="Ref" Value="26074652-5c44-4d30-a7a1-eee109dd5858" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_1" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="StatementRef" OID="f55c9a9e-106c-4e7c-a621-12e67c885ff4" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="91.76" HigherBound="91.96">
+                    <om:Property Name="Initializes" Value="False" />
+                    <om:Property Name="Ref" Value="45ed3eb9-e231-4743-8838-a72aebbfe711" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_2" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="StatementRef" OID="7f5a1f8e-0ea2-4b15-9c1e-ca2ccfccbf3b" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="116.69" HigherBound="116.89">
+                    <om:Property Name="Initializes" Value="False" />
+                    <om:Property Name="Ref" Value="cf37a61f-1368-4782-98b3-83dbd700b1b7" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_3" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="StatementRef" OID="f89744d0-c855-419a-bec2-f7912f2296ee" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="118.76" HigherBound="118.96">
+                    <om:Property Name="Initializes" Value="False" />
+                    <om:Property Name="Ref" Value="0c8b1cc7-d8ce-48f9-9e55-2220440bb904" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_4" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="0afdc095-d19f-4829-a445-0b6644760477" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="48.1" HigherBound="49.1">
+                <om:Property Name="Type" Value="SAMPLEMainBusinessFlow.SAMPLEKickOff" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgIncoming" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="ca62bebe-fbb7-4cac-b686-848b03311142" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="49.1" HigherBound="50.1">
+                <om:Property Name="Type" Value="CommonSchemas.ExceptionHandlerBufferCall" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgTaskRequest" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="07588ceb-a61e-4c24-a89a-c970aac70544" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="50.1" HigherBound="51.1">
+                <om:Property Name="Type" Value="CommonSchemas.ExceptionHandlerBufferResponse" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgTaskResponse" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="c0adf2f9-652b-4849-9eea-dc2447bee888" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="0356eba1-1b80-4a43-a5a7-1a9e2db9e5e1" ParentLink="ServiceBody_Statement" LowerBound="55.1" HigherBound="59.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_ReceiveIncoming" />
+                    <om:Property Name="MessageName" Value="msgIncoming" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_Incoming" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="70e278cb-3623-4219-88b6-0326130bac08" ParentLink="ServiceBody_Statement" LowerBound="59.1" HigherBound="61.1">
+                    <om:Property Name="Expression" Value="strCorrelation = msgIncoming(BTS.MessageID);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Init_Vars" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="45116a26-3d05-4a6c-8e41-3a6eed4bdcbe" ParentLink="ServiceBody_Statement" LowerBound="61.1" HigherBound="64.1">
+                    <om:Property Name="Expression" Value="xmlDoc = msgIncoming;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;Main Flow Init&quot;, &quot;Incoming Doc: &quot; + xmlDoc.OuterXml);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="temp_log" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="Task" OID="798c9f31-dece-4787-a70e-eaf44dd6ef04" ParentLink="ServiceBody_Statement" LowerBound="64.1" HigherBound="92.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Call the Task that Adds the two input parameters" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Construct" OID="0d41fece-c715-4294-b2c0-ac9a476e72ca" ParentLink="ComplexStatement_Statement" LowerBound="64.1" HigherBound="85.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConstructMessage_TaskRequest" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageRef" OID="2ab2d349-33eb-4314-ab2c-4ede389204cc" ParentLink="Construct_MessageRef" LowerBound="65.23" HigherBound="65.37">
+                            <om:Property Name="Ref" Value="msgTaskRequest" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Transform" OID="70aec3b0-8bbb-4722-8d16-540d3c4c6bc1" ParentLink="ComplexStatement_Statement" LowerBound="67.1" HigherBound="69.1">
+                            <om:Property Name="ClassName" Value="SAMPLEMainBusinessFlow.Map_Call" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Map_Call" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="MessagePartRef" OID="0447e3b8-e7f9-40eb-ad1a-10b09230a1bb" ParentLink="Transform_InputMessagePartRef" LowerBound="68.79" HigherBound="68.90">
+                                <om:Property Name="MessageRef" Value="msgIncoming" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_1" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="0f638d47-aa81-410f-a7ee-964592d6c93a" ParentLink="Transform_OutputMessagePartRef" LowerBound="68.28" HigherBound="68.42">
+                                <om:Property Name="MessageRef" Value="msgTaskRequest" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_2" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="MessageAssignment" OID="72b7a6f3-67af-4526-925d-4919c82080ca" ParentLink="ComplexStatement_Statement" LowerBound="69.1" HigherBound="84.1">
+                            <om:Property Name="Expression" Value="// Unique Correlation ID&#xD;&#xA;msgTaskRequest.CorrelationID = strCorrelation;&#xD;&#xA;&#xD;&#xA;// set the retry and delay per component.&#xD;&#xA;msgTaskRequest.MaxRetryCount = 3;&#xD;&#xA;msgTaskRequest.RetryDelay = 10; // in seconds&#xD;&#xA;&#xD;&#xA;// This indicates which Task List orchestration to call &#xD;&#xA;// (set the filter on the task orchestration's receive shape &#xD;&#xA;// to the name indicated here)&#xD;&#xA;msgTaskRequest.OrchestrationFilter = &quot;&quot;;&#xD;&#xA;&#xD;&#xA;// indicate which task to call&#xD;&#xA;msgTaskRequest.TaskName = &quot;Call_Assembly&quot;;" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="MessageAssignment_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="7a59b269-f9ae-4fbd-9e72-b089443e3c48" ParentLink="ComplexStatement_Statement" LowerBound="85.1" HigherBound="88.1">
+                        <om:Property Name="Expression" Value="xmlDoc = msgTaskRequest;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;Main Flow&quot;, &quot;Task Request: &quot; + xmlDoc.OuterXml);" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="temp_log" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Send" OID="26074652-5c44-4d30-a7a1-eee109dd5858" ParentLink="ComplexStatement_Statement" LowerBound="88.1" HigherBound="90.1">
+                        <om:Property Name="PortName" Value="Port_CallTaskProcess" />
+                        <om:Property Name="MessageName" Value="msgTaskRequest" />
+                        <om:Property Name="OperationName" Value="Operation_1" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Send_Task" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Receive" OID="45ed3eb9-e231-4743-8838-a72aebbfe711" ParentLink="ComplexStatement_Statement" LowerBound="90.1" HigherBound="92.1">
+                        <om:Property Name="Activate" Value="False" />
+                        <om:Property Name="PortName" Value="Port_ReceiveTaskProcess" />
+                        <om:Property Name="MessageName" Value="msgTaskResponse" />
+                        <om:Property Name="OperationName" Value="Operation_1" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Receive_Task" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="448eee76-a98e-4b46-91a2-6d869ac2dc43" ParentLink="ServiceBody_Statement" LowerBound="92.1" HigherBound="95.1">
+                    <om:Property Name="Expression" Value="xmlDoc = msgTaskResponse;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;Main Flow Reponse A&quot;, &quot;Task Response A: &quot; + xmlDoc.OuterXml);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="temp_log" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="Task" OID="9e9b765c-8eb0-4378-8ddf-5237df5494b1" ParentLink="ServiceBody_Statement" LowerBound="95.1" HigherBound="115.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Example Call to Map" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Construct" OID="4892ab4b-5e93-421d-bf7f-cfd277021bff" ParentLink="ComplexStatement_Statement" LowerBound="95.1" HigherBound="115.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConstructMessage_TaskRequest" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageRef" OID="81e32e89-b738-49a9-a89a-7c8bdc64fe18" ParentLink="Construct_MessageRef" LowerBound="96.23" HigherBound="96.37">
+                            <om:Property Name="Ref" Value="msgTaskRequest" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Transform" OID="489107d1-b763-4a29-aa62-12902240185a" ParentLink="ComplexStatement_Statement" LowerBound="98.1" HigherBound="100.1">
+                            <om:Property Name="ClassName" Value="SAMPLEMainBusinessFlow.Map_XML_Call" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Map_XML_Call" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessagePartRef" OID="78cb367f-37c5-4c35-9ab9-da7638df9911" ParentLink="Transform_InputMessagePartRef" LowerBound="99.83" HigherBound="99.94">
+                                <om:Property Name="MessageRef" Value="msgIncoming" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_3" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="a7b25dcc-3329-498a-a555-885e51058268" ParentLink="Transform_InputMessagePartRef" LowerBound="99.96" HigherBound="99.111">
+                                <om:Property Name="MessageRef" Value="msgTaskResponse" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_4" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="40f5020a-cba6-4bff-a8e5-e41accab8ce9" ParentLink="Transform_OutputMessagePartRef" LowerBound="99.28" HigherBound="99.42">
+                                <om:Property Name="MessageRef" Value="msgTaskRequest" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_5" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="MessageAssignment" OID="9604f049-97c3-4e45-9c5e-1bd2f6897e48" ParentLink="ComplexStatement_Statement" LowerBound="100.1" HigherBound="114.1">
+                            <om:Property Name="Expression" Value="msgTaskRequest.CorrelationID = strCorrelation;&#xD;&#xA;&#xD;&#xA;// set the retry and delay per component.&#xD;&#xA;msgTaskRequest.MaxRetryCount = 0;&#xD;&#xA;msgTaskRequest.RetryDelay = 0; // in seconds&#xD;&#xA;&#xD;&#xA;// This indicates which Task List orchestration to call &#xD;&#xA;// (set the filter on the task orchestration's receive shape &#xD;&#xA;// to the name indicated here)&#xD;&#xA;msgTaskRequest.OrchestrationFilter = &quot;&quot;;&#xD;&#xA;&#xD;&#xA;// indicate which task to call&#xD;&#xA;msgTaskRequest.TaskName = &quot;Map_Garbage&quot;;" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="MessageAssignment_1" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="cf37a61f-1368-4782-98b3-83dbd700b1b7" ParentLink="ServiceBody_Statement" LowerBound="115.1" HigherBound="117.1">
+                    <om:Property Name="PortName" Value="Port_CallTaskProcess" />
+                    <om:Property Name="MessageName" Value="msgTaskRequest" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_Task" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Receive" OID="0c8b1cc7-d8ce-48f9-9e55-2220440bb904" ParentLink="ServiceBody_Statement" LowerBound="117.1" HigherBound="119.1">
+                    <om:Property Name="Activate" Value="False" />
+                    <om:Property Name="PortName" Value="Port_ReceiveTaskProcess" />
+                    <om:Property Name="MessageName" Value="msgTaskResponse" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_Task" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="b34d43b3-ad58-45f7-8c7a-0f2f65d51b61" ParentLink="ServiceBody_Statement" LowerBound="119.1" HigherBound="122.1">
+                    <om:Property Name="Expression" Value="xmlDoc = msgTaskResponse;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;Main Flow Reponse B&quot;, &quot;Task Response B: &quot; + xmlDoc.OuterXml);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="temp_log" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Send" OID="6d09e221-5be0-42d8-acf8-9d3bdb02fd76" ParentLink="ServiceBody_Statement" LowerBound="122.1" HigherBound="124.1">
+                    <om:Property Name="PortName" Value="Port_SendOutput" />
+                    <om:Property Name="MessageName" Value="msgTaskResponse" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_Outgoing" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="0ca4d3df-a77e-4ae9-8bea-33e7b42596b2" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="39.1" HigherBound="41.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="5" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="SAMPLEMainBusinessFlow.PortType_ReceiveIncoming" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_ReceiveIncoming" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="PhysicalBindingAttribute" OID="c6fe5c8a-8005-41c3-930b-f224d77f6ab5" ParentLink="PortDeclaration_CLRAttribute" LowerBound="39.1" HigherBound="40.1">
+                    <om:Property Name="InPipeline" Value="Microsoft.BizTalk.DefaultPipelines.XMLReceive" />
+                    <om:Property Name="OutPipeline" Value="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" />
+                    <om:Property Name="TransportType" Value="FILE" />
+                    <om:Property Name="URI" Value="C:\ExceptionHandlerPatternDemo\Z_FileDrop_Incoming\*.xml" />
+                    <om:Property Name="IsDynamic" Value="False" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="bb82c64d-63b0-41e1-a745-268056dbe288" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="41.1" HigherBound="43.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="9" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="SAMPLEMainBusinessFlow.PortType_SendOutput" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_SendOutput" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="PhysicalBindingAttribute" OID="b176a42a-8a2d-4549-a4f6-020b634d1641" ParentLink="PortDeclaration_CLRAttribute" LowerBound="41.1" HigherBound="42.1">
+                    <om:Property Name="InPipeline" Value="Microsoft.BizTalk.DefaultPipelines.XMLReceive" />
+                    <om:Property Name="OutPipeline" Value="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" />
+                    <om:Property Name="TransportType" Value="FILE" />
+                    <om:Property Name="URI" Value="C:\ExceptionHandlerPatternDemo\Z_FileDrop_Outgoing\%MessageID%.xml" />
+                    <om:Property Name="IsDynamic" Value="False" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="94a5e008-d2ac-48ed-a017-dcfac1676ca0" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="43.1" HigherBound="45.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="23" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="SAMPLEMainBusinessFlow.PortType_CallTaskProcess" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_CallTaskProcess" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="DirectBindingAttribute" OID="11c87645-2082-4e09-bb3d-4ec3f149cbed" ParentLink="PortDeclaration_CLRAttribute" LowerBound="43.1" HigherBound="44.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="f319bfa3-b1c5-4a80-93eb-d4dc1c0edcc8" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="45.1" HigherBound="47.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="25" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="SAMPLEMainBusinessFlow.PortType_ReceiveTaskProcess" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_ReceiveTaskProcess" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="DirectBindingAttribute" OID="2ec46ae4-7f3b-482c-9ed8-4372dd99523c" ParentLink="PortDeclaration_CLRAttribute" LowerBound="45.1" HigherBound="46.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module SAMPLEMainBusinessFlow
+{
+    internal porttype PortType_ReceiveIncoming
+    {
+        oneway Operation_1
+        {
+            SAMPLEKickOff
+        };
+    };
+    internal porttype PortType_SendOutput
+    {
+        oneway Operation_1
+        {
+            CommonSchemas.ExceptionHandlerBufferResponse
+        };
+    };
+    internal porttype PortType_CallTaskProcess
+    {
+        oneway Operation_1
+        {
+            CommonSchemas.ExceptionHandlerBufferCall
+        };
+    };
+    internal porttype PortType_ReceiveTaskProcess
+    {
+        oneway Operation_1
+        {
+            CommonSchemas.ExceptionHandlerBufferResponse
+        };
+    };
+    internal correlationtype CorrelationType_ID
+    {
+        CommonSchemas.PropertySchema.CorrelationID
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service SAMPLEMainFlow
+    {
+        [Microsoft.XLANGs.BaseTypes.PhysicalBinding("FILE", "C:\\ExceptionHandlerPatternDemo\\Z_FileDrop_Incoming\\*.xml", typeof(Microsoft.BizTalk.DefaultPipelines.XMLReceive))]
+        port implements PortType_ReceiveIncoming Port_ReceiveIncoming;
+        [Microsoft.XLANGs.BaseTypes.PhysicalBinding("FILE", "C:\\ExceptionHandlerPatternDemo\\Z_FileDrop_Outgoing\\%MessageID%.xml", typeof(Microsoft.BizTalk.DefaultPipelines.XMLTransmit))]
+        port uses PortType_SendOutput Port_SendOutput;
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
+        port uses PortType_CallTaskProcess Port_CallTaskProcess;
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
+        port implements PortType_ReceiveTaskProcess Port_ReceiveTaskProcess;
+        correlation CorrelationType_ID Correlation_MainFlow;
+        message SAMPLEKickOff msgIncoming;
+        message CommonSchemas.ExceptionHandlerBufferCall msgTaskRequest;
+        message CommonSchemas.ExceptionHandlerBufferResponse msgTaskResponse;
+        System.Xml.XmlDocument xmlDoc;
+        System.String strCorrelation;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("0356eba1-1b80-4a43-a5a7-1a9e2db9e5e1")]
+            activate receive (Port_ReceiveIncoming.Operation_1, msgIncoming);
+            xmlDoc = new System.Xml.XmlDocument();
+            strCorrelation = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("70e278cb-3623-4219-88b6-0326130bac08")]
+            strCorrelation = msgIncoming(BTS.MessageID);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("45116a26-3d05-4a6c-8e41-3a6eed4bdcbe")]
+            xmlDoc = msgIncoming;
+            System.Diagnostics.EventLog.WriteEntry("Main Flow Init", "Incoming Doc: " + xmlDoc.OuterXml);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("0d41fece-c715-4294-b2c0-ac9a476e72ca")]
+            construct msgTaskRequest
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("70aec3b0-8bbb-4722-8d16-540d3c4c6bc1")]
+                transform (msgTaskRequest) = SAMPLEMainBusinessFlow.Map_Call (msgIncoming);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("72b7a6f3-67af-4526-925d-4919c82080ca")]
+                // Unique Correlation ID
+                msgTaskRequest.CorrelationID = strCorrelation;
+                
+                // set the retry and delay per component.
+                msgTaskRequest.MaxRetryCount = 3;
+                msgTaskRequest.RetryDelay = 10; // in seconds
+                
+                // This indicates which Task List orchestration to call 
+                // (set the filter on the task orchestration's receive shape 
+                // to the name indicated here)
+                msgTaskRequest.OrchestrationFilter = "";
+                
+                // indicate which task to call
+                msgTaskRequest.TaskName = "Call_Assembly";
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("7a59b269-f9ae-4fbd-9e72-b089443e3c48")]
+            xmlDoc = msgTaskRequest;
+            System.Diagnostics.EventLog.WriteEntry("Main Flow", "Task Request: " + xmlDoc.OuterXml);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("26074652-5c44-4d30-a7a1-eee109dd5858")]
+            send (Port_CallTaskProcess.Operation_1, msgTaskRequest, initialize Correlation_MainFlow);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("45ed3eb9-e231-4743-8838-a72aebbfe711")]
+            receive (Port_ReceiveTaskProcess.Operation_1, msgTaskResponse, Correlation_MainFlow);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("448eee76-a98e-4b46-91a2-6d869ac2dc43")]
+            xmlDoc = msgTaskResponse;
+            System.Diagnostics.EventLog.WriteEntry("Main Flow Reponse A", "Task Response A: " + xmlDoc.OuterXml);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("4892ab4b-5e93-421d-bf7f-cfd277021bff")]
+            construct msgTaskRequest
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("489107d1-b763-4a29-aa62-12902240185a")]
+                transform (msgTaskRequest) = SAMPLEMainBusinessFlow.Map_XML_Call (msgIncoming, msgTaskResponse);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("9604f049-97c3-4e45-9c5e-1bd2f6897e48")]
+                msgTaskRequest.CorrelationID = strCorrelation;
+                
+                // set the retry and delay per component.
+                msgTaskRequest.MaxRetryCount = 0;
+                msgTaskRequest.RetryDelay = 0; // in seconds
+                
+                // This indicates which Task List orchestration to call 
+                // (set the filter on the task orchestration's receive shape 
+                // to the name indicated here)
+                msgTaskRequest.OrchestrationFilter = "";
+                
+                // indicate which task to call
+                msgTaskRequest.TaskName = "Map_Garbage";
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("cf37a61f-1368-4782-98b3-83dbd700b1b7")]
+            send (Port_CallTaskProcess.Operation_1, msgTaskRequest, Correlation_MainFlow);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("0c8b1cc7-d8ce-48f9-9e55-2220440bb904")]
+            receive (Port_ReceiveTaskProcess.Operation_1, msgTaskResponse, Correlation_MainFlow);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("b34d43b3-ad58-45f7-8c7a-0f2f65d51b61")]
+            xmlDoc = msgTaskResponse;
+            System.Diagnostics.EventLog.WriteEntry("Main Flow Reponse B", "Task Response B: " + xmlDoc.OuterXml);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("6d09e221-5be0-42d8-acf8-9d3bdb02fd76")]
+            send (Port_SendOutput.Operation_1, msgTaskResponse);
+        }
+    }
+}
+

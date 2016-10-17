@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlBridgeConfiguration xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/WindowsAzureServiceBus/Bridge">
+  <XmlBridge i:type="XmlOneWayBridge">
+    <RequestPostTrfmEnrichStage>
+      <IsEnabled>true</IsEnabled>
+      <OnEnterInspector i:nil="true" />
+      <OnExitInspector i:nil="true" />
+      <XmlEnrich>
+        <Properties />
+      </XmlEnrich>
+    </RequestPostTrfmEnrichStage>
+    <RequestPreTrfmEnrichStage>
+      <IsEnabled>true</IsEnabled>
+      <OnEnterInspector i:nil="true" />
+      <OnExitInspector i:nil="true" />
+      <XmlEnrich>
+        <Properties />
+      </XmlEnrich>
+    </RequestPreTrfmEnrichStage>
+    <TransformStage>
+      <IsEnabled>true</IsEnabled>
+      <OnEnterInspector i:nil="true" />
+      <OnExitInspector i:nil="true" />
+      <XmlTransform>
+        <SelectedMaps xmlns:d5p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+          <d5p1:string>EDI_X12_810_To_Invoice.trfm</d5p1:string>
+        </SelectedMaps>
+      </XmlTransform>
+    </TransformStage>
+    <ValidateStage>
+      <IsEnabled>true</IsEnabled>
+      <OnEnterInspector i:nil="true" />
+      <OnExitInspector i:nil="true" />
+      <XmlValidate>
+        <WarningsAsErrors>false</WarningsAsErrors>
+      </XmlValidate>
+    </ValidateStage>
+    <DecodeStage>
+      <FlatFileDecode />
+      <OnEnterInspector i:nil="true" />
+      <OnExitInspector i:nil="true" />
+    </DecodeStage>
+    <EncodeStage>
+      <IsEnabled>true</IsEnabled>
+      <FlatFileEncode>
+        <SelectedSchemas />
+      </FlatFileEncode>
+      <OnEnterInspector i:nil="true" />
+      <OnExitInspector i:nil="true" />
+    </EncodeStage>
+    <IncomingMessageTypes>
+      <XmlSchemaInfo>
+        <FilePath>X12_00401_810.xsd</FilePath>
+        <RootNodeName>X12_00401_810</RootNodeName>
+        <SchemaNamespace>http://schemas.microsoft.com/BizTalk/EDI/X12/2006</SchemaNamespace>
+      </XmlSchemaInfo>
+    </IncomingMessageTypes>
+  </XmlBridge>
+</XmlBridgeConfiguration>

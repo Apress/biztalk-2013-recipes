@@ -1,0 +1,154 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="04cd9198-0fbd-4e3e-80e5-3b19bca109d4" LowerBound="1.1" HigherBound="37.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="PassingOrchestrationVariablesIntoMaps" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="d983054d-b600-424a-ac92-d19466059eb4" ParentLink="Module_ServiceDeclaration" LowerBound="4.1" HigherBound="36.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PassVariable" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="VariableDeclaration" OID="696920b8-9790-45e3-9026-d5fb246ae5ba" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="10.1" HigherBound="11.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strSupportCode" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="2bd0ae1b-14ea-44b2-ae3a-ad01ad31cc83" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="11.1" HigherBound="12.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strSupportCodeExpires" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="fabb0f89-23c3-40f1-8eac-6d77d67b6e14" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="12.1" HigherBound="13.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xmlXmlDoc" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="911a14bd-6dfb-4511-b64c-584fbd399e7f" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="7.1" HigherBound="8.1">
+                <om:Property Name="Type" Value="PassingOrchestrationVariablesIntoMaps.InputMessage" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgInputMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="0918c0e7-c313-4b6c-a8aa-8af32462d19a" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="8.1" HigherBound="9.1">
+                <om:Property Name="Type" Value="PassingOrchestrationVariablesIntoMaps.OutputMessage" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgOutputMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="c6d2de69-e337-4006-b006-8478ce7f7164" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="9.1" HigherBound="10.1">
+                <om:Property Name="Type" Value="PassingOrchestrationVariablesIntoMaps.MapContext" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgContext" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="5961bd2c-af36-4d4d-8157-31e636ef3f57" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Construct" OID="e62f1bf0-515d-4fa5-b30e-a1f8d3a89496" ParentLink="ServiceBody_Statement" LowerBound="18.1" HigherBound="28.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_1" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageAssignment" OID="8067ad73-365f-4c33-9016-8a7afc508688" ParentLink="ComplexStatement_Statement" LowerBound="21.1" HigherBound="27.1">
+                        <om:Property Name="Expression" Value="xmlXmlDoc.LoadXml(&quot;&lt;ns0:MapContext xmlns:ns0='http://PassingOrchestrationVariablesIntoMaps.MapContext'&gt;&lt;SupportCode&gt;SupportCode_0&lt;/SupportCode&gt;&lt;SupportExpires&gt;SupportExpires_0&lt;/SupportExpires&gt;&lt;/ns0:MapContext&gt;&quot;);&#xD;&#xA;msgContext = xmlXmlDoc;&#xD;&#xA;&#xD;&#xA;msgContext.SupportCode = &quot;R-2&quot;;&#xD;&#xA;msgContext.SupportExpires = System.DateTime.Now.ToString(&quot;yyyy-MM-dd&quot;);" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="MessageAssignment_1" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="f5a5b3c0-9d33-4d0a-beb5-628ebadfd312" ParentLink="Construct_MessageRef" LowerBound="19.23" HigherBound="19.33">
+                        <om:Property Name="Ref" Value="msgContext" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Construct" OID="38054e22-ceb7-4472-9548-6019e9f47c1c" ParentLink="ServiceBody_Statement" LowerBound="28.1" HigherBound="34.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_2" />
+                    <om:Property Name="Signal" Value="False" />
+                    <om:Element Type="Transform" OID="641ce231-91a5-4e00-9626-641fe2888604" ParentLink="ComplexStatement_Statement" LowerBound="31.1" HigherBound="33.1">
+                        <om:Property Name="ClassName" Value="PassingOrchestrationVariablesIntoMaps.Transform_1" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform_1" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessagePartRef" OID="946a53fb-c753-4b3c-b14a-1e65487953f6" ParentLink="Transform_InputMessagePartRef" LowerBound="32.99" HigherBound="32.114">
+                            <om:Property Name="MessageRef" Value="msgInputMessage" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="292bf18d-a23e-42fe-9e16-cf118afa40b8" ParentLink="Transform_InputMessagePartRef" LowerBound="32.116" HigherBound="32.126">
+                            <om:Property Name="MessageRef" Value="msgContext" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="a152ad7c-6a98-40a9-aeb7-d8a7dd7f3295" ParentLink="Transform_OutputMessagePartRef" LowerBound="32.28" HigherBound="32.44">
+                            <om:Property Name="MessageRef" Value="msgOutputMessage" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_3" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="dae46068-6358-4008-bd7f-9e9091fb3eec" ParentLink="Construct_MessageRef" LowerBound="29.23" HigherBound="29.39">
+                        <om:Property Name="Ref" Value="msgOutputMessage" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module PassingOrchestrationVariablesIntoMaps
+{
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service PassVariable
+    {
+        message InputMessage msgInputMessage;
+        message OutputMessage msgOutputMessage;
+        message MapContext msgContext;
+        System.String strSupportCode;
+        System.String strSupportCodeExpires;
+        System.Xml.XmlDocument xmlXmlDoc;
+        body ()
+        {
+            strSupportCode = "";
+            strSupportCodeExpires = "";
+            xmlXmlDoc = new System.Xml.XmlDocument();
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("e62f1bf0-515d-4fa5-b30e-a1f8d3a89496")]
+            construct msgContext
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("8067ad73-365f-4c33-9016-8a7afc508688")]
+                xmlXmlDoc.LoadXml("<ns0:MapContext xmlns:ns0='http://PassingOrchestrationVariablesIntoMaps.MapContext'><SupportCode>SupportCode_0</SupportCode><SupportExpires>SupportExpires_0</SupportExpires></ns0:MapContext>");
+                msgContext = xmlXmlDoc;
+                
+                msgContext.SupportCode = "R-2";
+                msgContext.SupportExpires = System.DateTime.Now.ToString("yyyy-MM-dd");
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("38054e22-ceb7-4472-9548-6019e9f47c1c")]
+            construct msgOutputMessage
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("641ce231-91a5-4e00-9626-641fe2888604")]
+                transform (msgOutputMessage) = PassingOrchestrationVariablesIntoMaps.Transform_1 (msgInputMessage, msgContext);
+            }
+        }
+    }
+}
+

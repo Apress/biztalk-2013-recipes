@@ -1,0 +1,228 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="94fbdc77-2487-48e0-9350-74a565f3fe08" LowerBound="1.1" HigherBound="54.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="SOAPHeader" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="b111c2a6-40ef-46ed-91dd-ce3016ef22ce" ParentLink="Module_ServiceDeclaration" LowerBound="20.1" HigherBound="53.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PrimaryOrch" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="67f7c991-8b41-43b3-aaf6-c3fbfce1769a" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="29.1" HigherBound="30.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xmlDoc" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="348f9428-8a1a-44ec-bb52-7a55919d1bb1" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="Type" Value="CreatingSOAPHeaders.Primary" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgPrimary" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="899f2c2a-942c-47f0-ba60-6a2ea0dfee9a" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="28.1" HigherBound="29.1">
+                <om:Property Name="Type" Value="CreatingSOAPHeaders.Secondary" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgSecondary" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="5bcf3a88-6393-4adc-9228-4fcafce6775d" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="510a27cb-3dc6-48ad-a6d7-3b7e54dd154b" ParentLink="ServiceBody_Statement" LowerBound="32.1" HigherBound="35.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_1" />
+                    <om:Property Name="MessageName" Value="msgPrimary" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_Incoming" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Task" OID="bf1bf5e8-d224-4680-b145-489e5b487689" ParentLink="ServiceBody_Statement" LowerBound="35.1" HigherBound="49.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Construct Instance and add SOAP Header" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Construct" OID="af0e8466-495c-44ff-893e-6e907f39fb12" ParentLink="ComplexStatement_Statement" LowerBound="35.1" HigherBound="49.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConstructMessage_Secondary" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageAssignment" OID="6409c81c-ee3d-4b44-b058-3d66b0ec80b1" ParentLink="ComplexStatement_Statement" LowerBound="38.1" HigherBound="48.1">
+                            <om:Property Name="Expression" Value="// prepare a default instance of the secondary document&#xD;&#xA;xmlDoc.LoadXml(&quot;&lt;ns0:Secondary xmlns:ns0='http://SOAPHeader.Secondary'&gt;&lt;MessageID&gt;MessageID_0&lt;/MessageID&gt;&lt;Name&gt;Name_0&lt;/Name&gt;&lt;/ns0:Secondary&gt;&quot;);&#xD;&#xA;msgSecondary = xmlDoc;&#xD;&#xA;&#xD;&#xA;// populate the SOAP Header information&#xD;&#xA;msgSecondary(CreatingSOAPHeaders.MessageId) = System.Convert.ToString(System.Guid.NewGuid());&#xD;&#xA;msgSecondary(CreatingSOAPHeaders.TraceFlag) = true;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="MessageAssignment_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessageRef" OID="caf9b126-3151-4c7b-900a-b74ddd2c12f8" ParentLink="Construct_MessageRef" LowerBound="36.23" HigherBound="36.35">
+                            <om:Property Name="Ref" Value="msgSecondary" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="43612059-e698-45d2-a6f2-f8779f18c0d0" ParentLink="ServiceBody_Statement" LowerBound="49.1" HigherBound="51.1">
+                    <om:Property Name="PortName" Value="Port_2" />
+                    <om:Property Name="MessageName" Value="msgSecondary" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_Secondary" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="6943d50b-2395-4834-b4e1-87214094a54b" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="SOAPHeader.PortType_4" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="98831f28-bb41-465a-a102-b18f3208994e" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="1e4b44ff-8471-432a-943b-86d4f4154ba2" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="25.1" HigherBound="27.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="10" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="SOAPHeader.PortType_3" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_2" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="DirectBindingAttribute" OID="9ee1800c-739b-42df-91dd-53f3114c825b" ParentLink="PortDeclaration_CLRAttribute" LowerBound="25.1" HigherBound="26.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="0a65be26-564e-410f-8e7f-497b850f4af6" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="6.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_1" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="2fdc8bcc-4cb5-4f72-9e1f-076a760da3f8" ParentLink="PortType_OperationDeclaration">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="f8809426-ed8a-4718-baf9-732d2c5200be" ParentLink="OperationDeclaration_RequestMessageRef">
+                    <om:Property Name="Ref" Value="SOAPHeaderTest.Main" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="fe9a2bc3-d5f4-4912-8da1-4d92e50ef5ba" ParentLink="Module_PortType" LowerBound="6.1" HigherBound="13.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_3" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="413575d1-e0d4-4b69-88e6-c108af7a17d3" ParentLink="PortType_OperationDeclaration" LowerBound="8.1" HigherBound="12.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="a8e19c31-aae9-410c-a88d-cf11acc976d5" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="10.13" HigherBound="10.42">
+                    <om:Property Name="Ref" Value="CreatingSOAPHeaders.Secondary" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="592328c2-7adc-4426-8c8d-6dc97102a903" ParentLink="Module_PortType" LowerBound="13.1" HigherBound="20.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_4" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="580e6dec-ca94-411f-b964-04b0828ea867" ParentLink="PortType_OperationDeclaration" LowerBound="15.1" HigherBound="19.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="8e433dd3-fe41-49e1-9ea7-2cc066c341f9" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="17.13" HigherBound="17.40">
+                    <om:Property Name="Ref" Value="CreatingSOAPHeaders.Primary" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module SOAPHeader
+{
+
+#error "Errors exist for one or more children."
+    internal porttype PortType_3
+    {
+        oneway Operation_1
+        {
+            CreatingSOAPHeaders.Secondary
+        };
+    };
+    public porttype PortType_4
+    {
+        oneway Operation_1
+        {
+            CreatingSOAPHeaders.Primary
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service PrimaryOrch
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_4 Port_1;
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
+        port uses PortType_3 Port_2;
+        message CreatingSOAPHeaders.Primary msgPrimary;
+        message CreatingSOAPHeaders.Secondary msgSecondary;
+        System.Xml.XmlDocument xmlDoc;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("510a27cb-3dc6-48ad-a6d7-3b7e54dd154b")]
+            activate receive (Port_1.Operation_1, msgPrimary);
+            xmlDoc = new System.Xml.XmlDocument();
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("af0e8466-495c-44ff-893e-6e907f39fb12")]
+            construct msgSecondary
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("6409c81c-ee3d-4b44-b058-3d66b0ec80b1")]
+                // prepare a default instance of the secondary document
+                xmlDoc.LoadXml("<ns0:Secondary xmlns:ns0='http://SOAPHeader.Secondary'><MessageID>MessageID_0</MessageID><Name>Name_0</Name></ns0:Secondary>");
+                msgSecondary = xmlDoc;
+                
+                // populate the SOAP Header information
+                msgSecondary(CreatingSOAPHeaders.MessageId) = System.Convert.ToString(System.Guid.NewGuid());
+                msgSecondary(CreatingSOAPHeaders.TraceFlag) = true;
+                
+                
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("43612059-e698-45d2-a6f2-f8779f18c0d0")]
+            send (Port_2.Operation_1, msgSecondary);
+        }
+    }
+}
+

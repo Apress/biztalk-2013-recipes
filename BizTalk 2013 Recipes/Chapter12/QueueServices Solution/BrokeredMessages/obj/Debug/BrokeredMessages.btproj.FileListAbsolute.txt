@@ -1,0 +1,4 @@
+C:\Projects\Apress\Chapters\Chapter12\QueueServices Solution\BrokeredMessages\bin\Debug\BrokeredMessages.dll
+C:\Projects\Apress\Chapters\Chapter12\QueueServices Solution\BrokeredMessages\bin\Debug\BrokeredMessages.pdb
+C:\Projects\Apress\Chapters\Chapter12\QueueServices Solution\BrokeredMessages\obj\Debug\BrokeredMessages.dll
+C:\Projects\Apress\Chapters\Chapter12\QueueServices Solution\BrokeredMessages\obj\Debug\BrokeredMessages.pdb

@@ -1,0 +1,4 @@
+C:\Projects\Apress\Chapters\Chapter12\QueueServices Solution\QueueReceiver\bin\Debug\QueueReceiver.dll
+C:\Projects\Apress\Chapters\Chapter12\QueueServices Solution\QueueReceiver\bin\Debug\QueueReceiver.pdb
+C:\Projects\Apress\Chapters\Chapter12\QueueServices Solution\QueueReceiver\obj\Debug\QueueReceiver.dll
+C:\Projects\Apress\Chapters\Chapter12\QueueServices Solution\QueueReceiver\obj\Debug\QueueReceiver.pdb
